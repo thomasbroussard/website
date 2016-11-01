@@ -1,9 +1,0 @@
-@startuml
-class Dog{
-    ..Properties..
-    - color
-    - size
-    - species
-
-}
-@enduml

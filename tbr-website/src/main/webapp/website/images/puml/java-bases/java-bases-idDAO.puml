@@ -1,6 +1,0 @@
-@startuml
-interface IdentityDAO {
-	boolean store(Identity identity)
-	List<Identity> getAllIdentities()
-}
-@enduml

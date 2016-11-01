@@ -1,9 +1,0 @@
-@startuml
-Class JavaSyntaxDemo {
-     - String demoVersion
-
-
-     + JavaSyntaxDemo()
-     + String getDemoVersion()
-}
-@enduml

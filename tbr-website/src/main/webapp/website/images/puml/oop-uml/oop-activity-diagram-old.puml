@@ -1,6 +1,0 @@
-@startuml
-(Essa) --> (essai)
-Diamond dia{
-
-}
-@enduml
