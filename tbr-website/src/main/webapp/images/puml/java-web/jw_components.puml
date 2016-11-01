@@ -1,0 +1,30 @@
+@startuml
+
+left to right direction
+Partition Client {
+User --> Browser
+}
+Partition "Tomcat Application Server"{
+    Partition "Web Facade" {
+        Browser --> [http] "Apache Coyotte"
+        note right : Http server
+
+    }
+    Partition "Java web module" {
+        "Apache Coyotte" --> "Tomcat Runtime"
+        note right
+            Http parts are transformed
+            into java objects
+        end note
+        "Tomcat Runtime" --> "Servlet Container"
+        "Servlet Container" --> "<b>Servlet</b>"
+        "Servlet Container" --> "<b>Java Server Pages</b>"
+        "<b>Java Server Pages</b>" --> "Java + Web (HTML, JavaScript, CSS)"
+    }
+
+    Partition "Java Core" {
+        "<b>Servlet</b>"--> "Java code"
+    }
+}
+
+@enduml

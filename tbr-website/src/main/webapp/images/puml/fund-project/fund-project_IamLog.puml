@@ -1,0 +1,13 @@
+@startuml
+
+class IamLog {
+    -String loggingEntity
+
+	+void info(String message)
+	+void debug(String message)
+	+void warning(String message)
+	+void log(String message, String Level)
+	+void error(String message)
+
+}
+@enduml

@@ -1,0 +1,17 @@
+@startuml
+
+(*) --> "Login Page"
+--> "Welcome Page"
+if "" then
+--> "Identity Creation Page"
+else
+-->"Search Page"
+endif
+if "" then
+--> "Modification"
+else
+--> "Deletion"
+
+
+endif
+@enduml

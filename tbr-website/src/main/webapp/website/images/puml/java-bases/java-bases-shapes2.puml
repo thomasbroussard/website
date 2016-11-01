@@ -1,0 +1,32 @@
+@startuml
+Class Triangle{
+    base
+    height
+    sideA
+    sideB
+
+    getArea()
+    getPerimeter()
+}
+Class Square extends Quadrilateral{
+
+}
+
+Class Quadrilateral{
+    height
+    width
+
+    getArea()
+    getPerimeter()
+}
+
+Class Circle{
+    radius
+
+    getArea()
+    getPerimeter()
+}
+
+
+
+@enduml

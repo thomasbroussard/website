@@ -1,0 +1,35 @@
+@startuml
+
+
+frame "Project " {
+    frame "src" {
+        [java sources]
+        note top of "java sources"
+            contains the java resources
+            "as usual"
+        end note
+    }
+    frame "WebContent" {
+        frame "WEB-INF"{
+            [private resources]
+            note top of "private resources"
+                contains configuration files libraries,
+                classes and other resources, not available
+                via the web layer
+            end note
+        }
+        frame "META-INF"{
+            [application description]
+            note top of "application description"
+                contains the application description, the
+                application context etc.
+            end note
+        }
+
+        [Available pages and resources]
+
+
+    }
+
+}
+@enduml

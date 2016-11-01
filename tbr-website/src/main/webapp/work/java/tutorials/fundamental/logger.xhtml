@@ -1,0 +1,702 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+
+    <!-- Basic Page Needs
+  ================================================== -->
+    <meta charset="utf-8"/>
+    <title>(Not) Just Java</title>
+    <meta name="description" content="Tutorial - Logger feature"/>
+    <meta name="author" content="Thomas Broussard"/>
+
+    <!-- Mobile Specific Metas
+  ================================================== -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="shortcut icon" href="../../../../images/favicon.ico"/>
+    <link href="../../../../stylesheets/doc-bs.css" rel="stylesheet"/>
+    <link href="../../../../stylesheets/custom.css" rel="stylesheet"/>
+    <title>(Not) Just Java</title>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css"/>
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css"/>
+    <link rel="stylesheet" type="text/css" href="../../../../stylesheets/github-rainbow.css"/>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+
+</head>
+<body>
+<!-- Main jumbotron for a primary marketing message or call to action -->
+<!-- Docs page layout -->
+<div class="bs-docs-header" id="content">
+    <div class="container">
+        <h1>Java Tutorials - Logger</h1>
+
+        <p>Trace technical data, how to implement a logging feature in Java? </p>
+
+    </div>
+
+</div>
+
+<div class="container bs-docs-container">
+
+<div class="row">
+<div class="col-md-3">
+    <div class="bs-docs-sidebar hidden-print" role="complementary">
+        <ul class="nav bs-docs-sidenav">
+            <li><a href="#intro">Introduction</a></li>
+            <li><a href="#exercise">Exercise description</a></li>
+            <li><a href="#warmup">Java Warm-up </a></li>
+            <li><a href="#backtologger">Back to the logger exercise</a></li>
+            <li><a href="#improvements">Improvements</a></li>
+              <li><a href="#jdklogger">Using the JDK logger</a></li>
+        </ul>
+        <a class="back-to-top" href="#content">
+            Back to top
+        </a>
+    </div>
+
+
+</div>
+<div class="col-md-9" role="main">
+<ol class="breadcrumb">
+    <li><a href="../../../../index.xhtml">Home</a></li>
+    <li><a href="../../../index.xhtml">Work</a></li>
+    <li><a href="../../index.xhtml">Java</a></li>
+    <li><a href="../index.xhtml">Tutorials</a></li>
+    <li class="active">Java - The Logger</li>
+</ol>
+<div class="bs-docs-section">
+
+<h1 id="intro" class="page-header">Introduction</h1>
+
+<p>This tutorial will show you how to handle a classical technical feature : the <code>Log</code> (or
+    <code>Logger</code>) feature</p>
+
+<p>The class should be named <code>IamLog</code> and should have 5 methods:</p>
+<ul>
+    <li>log(String message) : to simply output a trace in the log file</li>
+    <li>info(String message) : to output a message at level <strong>info</strong></li>
+    <li>warn(String message) : the same as info, with level <strong>warn</strong></li>
+    <li>error(String message) : the same as info, with level <strong>error</strong></li>
+    <li>debug(String message) : the same as info, with level <strong>debug</strong></li>
+</ul>
+
+
+<h1 id="exercise" class="page-header">Exercise description</h1>
+
+<p>This exercise goal is to make you program an <code>IamLog</code> Class, which is an
+    <strong>utility</strong> class,
+    allowing to write and keep technical information while the program is executing</p>
+
+<p>When you will be in your first job, the log files are <strong>very important</strong>, as they are
+    most of the time
+    the only way to find what happened on the customer installation.</p>
+
+<h3 class="title" id="exercise.usecase">A concrete usecase</h3>
+
+<p>Your company product, an IAM software, is deployed on several customers installations. One day, one
+    of your customer
+    is calling your company's support to report
+    that your application unexpectedly crashed, doing a particular action</p>
+
+<p>This case has never been encountered by the support team, and they delegate this bug resolution to
+    you</p>
+
+<p>Fortunately, you added a <strong>Logging</strong> feature to your application, meaning that all
+    important or critical
+    operations made during the application execution are reported in a <strong>text file</strong></p>
+
+<p>Your log file content may look like this</p>
+<pre><code>2014/05/31 - 10:06:14.795 : fr.tbr.iamcore.Main.main()[19] : [INFO] Beginning of the program
+2014/05/31 - 10:06:14.797 : fr.tbr.iamcore.Main.main()[21] : [INFO] proposing the main menu
+2014/05/31 - 10:06:19.180 : fr.tbr.iamcore.Main.main()[30] : [SEVERE] got an exception, unable to continue
+2014/05/31 - 10:06:19.180 : fr.tbr.iamcore.Main.main()[31] : [SEVERE] null
+</code></pre>
+<p>Thanks to this technical information, you know that the bug is located in the <code>Main</code>
+    class, in the <code>main()</code>,
+    between the lines 21 and 30</p>
+
+<p>So you open your code :</p>
+
+<pre><code class="java">public static void main(String[] args) {
+
+    IamLog log = IamLog.getLogger(Main.class);
+    System.out.println("Welcome in the IAM System");
+    log.info("Beginning of the program");
+    Scanner scanner = new Scanner(System.in);
+    log.info("proposing the main menu"); //line 21
+    System.out.println("Please choose among the propositions");
+    System.out.println("Create a user (1), Modify a user (2), Delete a user (3)? Your choice (1|2|3)?");
+    int answer;
+    try {
+        answer = scanner.nextInt(); // user action
+        log.info("got answer: " + answer);
+    } catch (Exception e) {
+        log.error("got an exception, unable to continue"); //line 30
+        log.error(e.getMessage());
+        return;
+    }
+    log.info("continue with choice: " + answer);
+}
+</code></pre>
+
+<p>You suddenly remember how you managed to output the log information: you did it through the <code>IamLog</code>
+    object. You created one local variable named "log" and called the <code>info()</code> and <code>error()</code>
+    methods with the appropriate parameters. <strong>It has nothing with the user dialog</strong>, and
+    it does not
+    appear on his console, but is only reported in the log text file sent by the customer</p>
+
+<p><strong>Levels</strong> of log, such as "info" or "errror" allow to filter what is output in the log
+    file. As an example, on production systems, as the load is heavy for the system running the
+    application, the customer may want to disable any log, except critical (error) messages. This can be
+    done thanks to the use of different methods, indicating whether a message is really important or not
+</p>
+
+<h3 class="title" id="exercise.solution">Bug resolution</h3>
+
+<p>And you notice now, that this can happen only if the user input is not satisfying the
+    <code>nextInt()</code>
+    contract, the input has to be an <code>int</code></p>
+
+<p>So you assume that the input was not correct, and ask for a screenshot of what he did to encounter
+    the error.</p>
+
+<p>What the customers send is below</p>
+
+<img class="img-responsive" style="border:1px solid black;margin: auto
+" src="../../../../images/png/tutorials_loggers_userinput.png"/>
+
+<p/>
+
+<p class="text-danger">The user did type a wrong option!</p>
+
+<div class="bs-callout bs-callout-info">
+    <h3 class="title">Remember</h3>
+    that what is obvious to you, may seem
+    weird or even is totally
+    misunderstood by the real user of the application. So in this case, you should have informed the
+    user that the
+    option was not an expected one, and in the same time, you can advice the customer to read more
+    carefully the program
+    instructions
+</div>
+<h3>Goal of this exercise</h3>
+
+<p>This exercise will make you apply several concepts, seen (or partially seen) during lectures, such
+    as: </p>
+<ul>
+    <li>String manipulations</li>
+    <li>Dates usage</li>
+    <li>Files usage</li>
+    <li>The built-in <code>java.util.logging</code> features</li>
+</ul>
+
+
+<h1 id="warmup" class="page-header">Warm up : see how it works in Java</h1>
+
+<p>As a first try for this feature implementation, we will stay with the most basic information, the
+    date and time, and
+    the message for this trace should be enough</p>
+
+<p>As seen on this <a href="../../../../presentation/fundamental/lecture7.html">lecture</a>, we have to
+    manipulate date and time through the type <code>Date</code></p>
+
+<h3 class="title" id="warmup.recall">A brief recall of the java philosophy</h3>
+<h4>Everything is an object...</h4>
+
+<p>In Java, we've seen that almost everything was Object. This is why anything we will do will begin by
+    the creation of a Java class</p>
+
+<p>Since the beginning of this course, we have seen two kinds of Java Class</p>
+<ul>
+    <li><strong>Data model classes </strong> : they are classes representing an entity of your program,
+        this is usually called the <strong>Data
+            model</strong> of your application
+    </li>
+    <li><strong>Entry points</strong> of your program, where the main method is. Entry points allows the
+        Java Virtual Machine to execute a part of the program, it is a point where the global program
+        flow can start.
+    </li>
+    <li><strong>Service classes</strong>: There is an other kind of class, we will call it a <strong>Service</strong>
+        class. A service is a
+        technical entity (a class in our case) that provides technical operations, allowing to
+        improve/operate the application execution, this is for instance the case with the <code>Authenticator</code>
+        class
+    </li>
+</ul>
+<p></p>
+
+<h4>Objects using other Objects? This is a Java application</h4>
+
+<p>So we have our entry point: the <code>Main</code> class (at least with a main method). For the
+    project you have to realize, this <code>Main class</code> will be, through the main method, the
+    place to call the
+    other objects for the application</p>
+
+<p>For now we have made only one object before, the <code>Authenticator</code> object. Remember?</p>
+                <pre><code class="java">package fr.tbr.iamcore.authentication;
+
+/**
+ * This class allows to perform an authentication for a user trying to access the application
+ * {@link #authenticate(String, String)} for further detail about the authentication feature
+ * @author Tom
+ */
+public class Authenticator {
+
+	private String login;
+	private boolean authenticated;
+
+	/**
+	 * This method allows to check if the user is granted according to its couple (login/pwd)
+	 * @param userLogin the input login
+	 * @param userPassword the input password
+	 * @return true if the user is authenticated
+	 */
+	public boolean authenticate(String userLogin, String userPassword){
+		String foundPassword = getUserPassword(userLogin);
+		if (foundPassword == null || foundPassword.trim().isEmpty()){
+			//user was not found or no way to find a password
+			return false;
+		}
+		authenticated = userPassword.equals(foundPassword) ;
+		if (authenticated){
+			System.out.println("Access is granted !");
+			this.login = userLogin; //stores the login for further use
+		}else{
+			System.out.println("Access is denied ...");
+		}
+		return authenticated;
+	}
+
+	public String getLogin() {
+		return login;
+	}
+
+	public boolean isAuthenticated() {
+		return authenticated;
+	}
+
+	private String getUserPassword(String user){
+		//Should be implemented later, it should check against a database for instance or in a file.
+		return user;
+	}
+}</code> </pre>
+<p>Notice that there is no entry point, so to use this object in the program, you'll have to use it in a class holding a
+    main method, such as the following example:</p>
+<pre><code class="java">package fr.tbr.iamcore;
+
+import java.util.Scanner;
+import fr.tbr.iamcore.authentication.Authenticator;
+
+/**
+ * The main entry point of the identity program
+ * @author Tom
+ */
+public class Main {
+
+	public static void main(String[] args) {
+		System.out.println("Welcome in the IAM System");
+		Scanner scanner = new Scanner(System.in);
+		System.out.println("Please authenticate, type your login :");
+		String readLogin = scanner.next();
+		System.out.println("type your password :");
+		String readPassword = scanner.next();
+		//Notice the Authenticator usage
+		Authenticator authenticator = new Authenticator();
+		authenticator.authenticate(readLogin, readPassword);
+		if (!authenticator.isAuthenticated()){
+			System.out.println("Invalid user/password combination, exiting...");
+		}
+		System.out.println("Successfully authenticated");
+		System.out.println("Please choose among the propositions");
+		System.out.println("Create a user (1), Modify a user (2), Delete a user (3)? Your choice (1|2|3)?");
+		int answer;
+		try {
+			answer = scanner.nextInt();
+		} catch (Exception e) {
+			return;
+		}
+		scanner.close();
+	}
+}
+</code></pre>
+<p>This should have warmed you up about how to design and manipulate objects in Java.</p>
+
+<h1 class="page-header" id="backtologger">Back to the Logger exercise</h1>
+
+<p>As specified by the Exercise description, the IamLog class has to have <strong>5</strong> methods, according to this
+    description, we can draw this <code>UML</code> schema</p>
+
+<div class="img-container">
+    <img class="schema" src="../../../../images/svg/fund-project_IamLog.svg"/>
+</div>
+
+<p>We can now create the <code>IamLog</code> class</p>
+
+<h3 class="title" id="backtologger.createclass">Create the class</h3>
+
+<div>Hereafter can be a way to realize the IAMLog class</div>
+<pre><code class="java">package fr.tbr.iamcore.logging;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+/**
+ * The logger for the IAM Log
+ *
+ * @author Tom
+ */
+public class IamLog {
+
+	static final SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd - HH:mm:ss.SSS");
+	private String loggingEntity;
+
+	/**
+	 * Creates an instance of the logger with the given parameter as a
+	 * "logging entity".
+	 *
+	 * @param loggingEntity
+	 */
+	public IamLog(String loggingEntity) {
+		this.loggingEntity = loggingEntity;
+	}
+
+	/**
+	 * Output a log entry composed of the message and the level parameter
+	 * The call log("Hello all", "INFO");
+	 * will output: {the current date} - [INFO] - Hello all
+	 *
+	 * @param message
+	 *            the message you want to output
+	 * @param level
+	 *            the importance of the message
+	 */
+	public void log(String message, String level) {
+		String trace = sdf.format(new Date()) + " " + loggingEntity + " - ["	+ level + "] - " + message;
+		System.out.println(trace);
+
+	}
+
+	/**
+	 * output an INFO message
+	 *
+	 * @param message
+	 *            the message to record
+	 */
+	public void info(String message) {
+		log(message, "INFO");
+	}
+
+	/**
+	 * output an WARN message
+	 *
+	 * @param message
+	 *            the message to record
+	 */
+	public void warn(String message) {
+		log(message, "WARN");
+	}
+
+	/**
+	 * output an ERROR message
+	 *
+	 * @param message
+	 *            the message to record
+	 */
+	public void error(String message) {
+		log(message, "ERROR");
+	}
+
+	/**
+	 * output a DEBUG message
+	 *
+	 * @param message
+	 *            the message to record
+	 */
+	public void debug(String message) {
+		log(message, "DEBUG");
+	}
+
+}
+</code></pre>
+
+<h3 class="title" id="backtologger.test">Test it</h3>
+
+<div>Now we can take our entry point class, the <code>Main</code> class, and use it as shown in the first part.</div>
+<div>You've probably noticed, that we have to create a new instance of the IamLog class, for each "loggingEntity". In
+    fact, a logging entity could be whatever you like. For this tutorial, we will create a new instance of the IamLog
+    logger, for each class in which we want to trace
+</div>
+<pre><code class="java">package fr.tbr.iamcore;
+
+import fr.tbr.iamcore.logging.IamLog;
+
+public class Main {
+
+	public static void main(String[] args) {
+		//...
+		IamLog logger = new IamLog(Main.class.getSimpleName());
+		logger.debug("a sample debug test");
+		//... next code
+	}
+}
+</code> </pre>
+<div>This code will print the following output:</div>
+<pre><code>2014/06/07 - 19:46:14.779 Main - [DEBUG] - a sample debug test
+</code></pre>
+
+<p>Outputing stuffs in the standard output - where the program will interact with the user - is not very convenient.
+    So we need to have a more proper way to trace technical informations
+</p>
+
+<p>This is why, our first improvement will be to write all these traces into a File</p>
+<h4 class="title">Source code</h4>
+<a href="../resources/IamLogLv1.zip">Click here for the first step source code</a>
+
+<h1 class="page-header" id="improvements">Improvements</h1>
+
+<p>We've seen that the fact to log directly in the console output is not the good way to proceed, especially if your
+    program is a <strong>console application</strong></p>
+
+<h3 class="title" id="improvements.file">Logging in a file</h3>
+
+<p>We will need the <code>File</code> object, defined just below</p>
+
+<div class="bs-callout bs-callout-info">
+    <h4 class="title">Introducing the <code>File</code>, <code>FileWriter</code>, <code>FileReader</code> APIs</h4>
+
+    <p>The Java Development Kit has a built in File management feature, provided by the <code>File</code> object</p>
+
+    <p>The <code>File</code> object is like a <strong>pointer</strong> on the concrete file you are attempting to
+        access. It provides useful method to allow to test if a file exists, to create it if not etc.</p>
+
+    <p>The <code>File</code> object can be created using a path as a constructor, see the following example
+
+    </p>
+    <pre><code class="java">File loggingFile = new File("C:/my/path/to/file");</code></pre>
+    <p>To gain write and read access to this file you are forced to use respectively a <code>FileWriter</code> and a
+        <code>FileReader</code>. These objects take a <code>File</code> as a parameter</p>
+    <pre><code class="java">FileWriter writer = new FileWriter(loggingFile);
+writer.write("Created an IamLog instance, beginning of the log file");</code></pre>
+    <p>For the reader, it is often useful to use a scanner, so you have convenient methods to read the file (<code>next()</code>)
+    </p>
+    <pre><code class="java">FileReader reader = new FileReader(loggingFile);
+Scanner scan = new Scanner(reader);
+String firstLine = scan.next();</code></pre>
+</div>
+
+<p>Taking the previous hint in consideration, you can now improve your <code>IamLog</code> by implanting a file
+    management in the constructor, this way:</p>
+
+<pre><code class="java">public IamLog(String loggingEntity) {
+	File loggingFile = new File("C:/my/path/to/file");
+	if (!loggingFile.exists()){ // test if the file is really existing on the file system
+	    try{
+			//try to create the file if it does not exist
+			loggingFile.createNewFile();
+		}catch(IOException ioe){
+			//IOException is the standard exception when you have problem while accessing
+			//to a physical system resource
+			System.out.println("An error occurred while preparing the log file");
+		}
+	}
+	try {
+		this.writer = new FileWriter(loggingFile);
+		this.writer.write("Created an IamLog instance, beginning of the log file");
+		this.writer.flush(); concretely outputting the string in the file
+	} catch (IOException e) {
+		//Could not write in the file
+	}
+	this.loggingEntity = loggingEntity;
+}
+</code></pre>
+
+
+<p>Then you can improve the <code>log()</code> method by replacing the console output with the file one</p>
+
+<pre><code class="java">public void log(String message, String level) {
+	String trace = sdf.format(new Date()) + " " + loggingEntity + " - ["	+ level + "] - " + message;
+	//old call : System.out.println(trace);
+	//new call:
+	try {
+		this.writer.write(trace);
+		this.writer.flush(); // this will concretely output the string in the file
+	} catch (IOException e) {
+		e.printStackTrace(); //Handle exception here
+	}
+}
+</code></pre>
+
+<h4>From FileWriter to PrintWriter</h4>
+
+<p>After the first run, we obtain that in the targeted log file</p>
+<pre><code>Created an IamLog instance, beginning of the log file2014/06/09 - 11:52:10.729 Main - [DEBUG] - a sample debug test</code></pre>
+<p>It lacks line feed... Indeed, the FileWriter provides no <code>writeln()</code> or <code>println()</code> method. So
+    you have two choices, you can improve the writer by wrapping around it a <code>PrintWriter</code>, or you can
+    concatenate the standard "line separator" to the String end.</p>
+
+<p>You have to replace the type of <code>writer</code> by <code>PrintWriter</code>, which will give you access to useful
+    methods like <code>println()</code></p>
+<pre><code class="java">//... extract of the IamLog constructor
+try {
+	this.writer = new PrintWriter(new FileWriter(loggingFile));
+	writer.println("Created an IamLog instance, beginning of the log file");
+	writer.flush();
+} catch (IOException e) {
+	//Could not write in the file
+}
+
+//the log method
+public void log(String message, String level) {
+    String trace = sdf.format(new Date()) + " " + loggingEntity + " - ["	+ level + "] - " + message;
+    //old call : System.out.println(trace);
+    //new call:
+    this.writer.println(trace);
+    writer.flush();
+
+}
+//...
+//Just a hint : If you want to get the standard line separator:
+System.getProperty("line.separator");
+//...
+</code></pre>
+<p>This provides the following output now:</p>
+<pre><code>Created an IamLog instance, beginning of the log file
+2014/06/09 - 12:10:19.592 Main - [DEBUG] - a sample debug test</code></pre>
+
+<hr/>
+<h3 class="title" id="improvements.enum">Don't let the developer too much freedom</h3>
+
+<p>In the log method, you can provide whatever you want as a second parameter, there is no constraint on the
+    <code>level</code> parameter</p>
+
+<p><strong>Example</strong></p>
+
+<p>These calls</p>
+<pre><code class="java">logger.log("a sample", "INFO");
+logger.log("a bad sample", "BlahBlah");</code></pre>
+<p>Will produce</p>
+<pre><code>2014/06/09 - 12:10:19.592 Main - [INFO] - a sample
+2014/06/09 - 12:10:19.592 Main - [BlahBlah] - a bad sample</code></pre>
+
+<p>This is not good, because it means every developer can have his way to output logs.To avoid that, we can use two
+    possibilities :</p>
+<ul>
+    <li><strong>Public constants</strong> so the developer will have predefined values to call the method</li>
+    <li><strong>Enumeration</strong> which is a standard way to represent a list of constant values</li>
+</ul>
+<p></p>
+
+<h4>Define constants</h4>
+
+<p>To define constants, you have to use a combination of both <code>static final</code> keywords, if you want to make
+    them public, simply add <code>public</code>, just as the following block of code</p>
+<pre><code class="java">public class IamLog {
+
+	public static final String INFO = "INFO";
+	public static final String WARN = "WARN";
+	public static final String DEBUG = "DEBUG";
+	public static final String ERROR = "ERROR";
+//...
+}
+</code></pre>
+<p>To use them, just proceed as follow</p>
+<pre><code class="java">logger.log("a sample", IamLog.INFO);</code> </pre>
+
+<p>This is a bit better, but you still cannot avoid to use a random String, to achieve that functionality, we will need
+    the <code>Enumeration</code> feature</p>
+
+<p></p>
+<h4>Define Enumerations</h4>
+
+<p>An enumeration is a predefine "enumeration"(say a list) of constants, this is a Java entity so it can be considered
+    as a very particular class.</p>
+
+<p>As a result of this remark, an enumeration constitutes a <strong>type</strong></p>
+
+<p>The enumeration can be provided in its own file, or in an existing class. This is this last solution that will be
+    chosen:</p>
+
+<pre><code class="java">public class IamLog {
+
+//	public static final String INFO = "INFO";
+//	public static final String WARN = "WARN";
+//	public static final String DEBUG = "DEBUG";
+//	public static final String ERROR = "ERROR";
+	/**
+	 * Levels for the logging feature
+	 * @author Tom
+	 */
+	public enum Level{
+		INFO,
+		WARN,
+		DEBUG,
+		ERROR
+	}
+//...
+	//Notice the modification in the log method, the second parameter is of type "Level",
+	//instead of String
+	public void log(String message, Level level) {
+//...
+}
+</code></pre>
+
+<p>And the usage is as specified below</p>
+<pre><code class="java">logger.log("a sample", Level.INFO);
+logger.log("a good sample", Level.WARN);</code></pre>
+<p>If you try to put something else (a raw String for instance, like "BlahBlah"), you will now have a compilation
+    error</p>
+
+<h4 class="title">Source code</h4>
+<a href="../resources/IamLogLv2.zip">Click here to have the improved version</a>
+
+<!--
+<h3 class="title" id="improvements.abstraction">Think about further evolution</h3>
+-->
+<h1 class="page-header" id="jdklogger">Using the embedded JDK logger</h1>
+
+<p>The JDK embeds a ready-to-use logger feature, the tutorial will soon include the description of how to use it. You
+    still have a working sample in the source code below</p>
+
+
+<h4 class="title">Source code</h4>
+<a href="../resources/IamLogLv3.zip">The last IamLog state</a>
+
+<!--
+<h3 class="title" id="jdklogger.how">How the JDK logger works?</h3>
+
+<h3 class="title" id="jdklogger.formatter">Defining your own formatter</h3>
+
+-->
+</div>
+</div>
+<!-- container -->
+</div>
+</div>
+
+
+<div id="footer">
+    <div class="container text-muted">
+        Thomas Broussard &#169; 2014
+    </div>
+</div>
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+<script src="http://thomas-broussard.fr/scripts/bootstrap/doc/docs.min.js"></script>
+<script src="http://thomas-broussard.fr/scripts/rainbow/rainbow.js"></script>
+</body>
+
+</html>

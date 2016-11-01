@@ -1,0 +1,26 @@
+@startuml
+left to right direction
+skinparam packageStyle rect
+
+Developer --> .java
+Rectangle DevelopmentOS {
+    Rectangle .java {
+
+    }
+    .java --> (Compiler)
+
+    Rectangle .class{
+
+    }
+
+    (Compiler) --> .class
+
+    Rectangle JDK #orange{
+
+    }
+    JDK .. (Compiler)
+
+}
+
+
+@enduml

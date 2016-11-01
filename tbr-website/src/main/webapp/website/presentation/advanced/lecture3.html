@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Java Specialization Period - Lecture 3</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=792, user-scalable=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <script type="text/javascript" src="../resources/jquery/jquery.js"></script>
+    <script type="text/javascript" src="../resources/jquery/jquery-plantuml.js"></script>
+    <link rel="stylesheet" href="../resources/styles/screen.css"/>
+    <link rel="stylesheet" href="../resources/styles/custom.css"/>
+</head>
+<body class="list">
+<!--
+    Debug class on <body> enables
+    cyan grid on slides
+    -->
+<header class="caption">
+    <h1>Java Specialization period - Lecture 3</h1>
+
+    <p>Java and the Web, pt 2</p>
+</header>
+<section class="slide">
+    <div>
+        <h2>Before we start...</h2>
+
+        <p><strong>Assignment check:</strong> have you met any trouble in making the previous exercise?</p>
+
+
+        <footer>
+
+        </footer>
+    </div>
+</section>
+
+<section class="slide">
+    <div>
+        <h2>Java and the web</h2>
+
+        <p>We saw the last time how you could write a JSP, which aims at presenting the result of a treatment</p>
+
+        <p>We will now focus on the Servlet side, which is pure Java processing</p>
+
+        <footer>
+
+        </footer>
+    </div>
+</section>
+
+<section class="slide">
+    <div>
+        <h2>Servlets</h2>
+
+        <p>Servlets are like JSP... in fact JSP are Servlets where HTML output is favored.</p>
+
+
+        <div><strong>First advice</strong>
+            <ul>
+                <li class="next">If you want to do basic presentation, <strong>choose a JSP</strong></li>
+                <li class="next">If you want to perform treatments, <strong>call Servlet</strong></li>
+                <li class="next">The link between each of them can be made through requests/responses or session</li>
+            </ul>
+        </div>
+
+        <footer>
+
+        </footer>
+    </div>
+</section>
+<section class="slide">
+    <div>
+        <h2>Servlets (2)</h2>
+
+        <p>Differences between <strong>2.5</strong> and <strong>3.0</strong> servlets implementation</p>
+        <ul>
+            <li class="next">In the former implementation (<strong>2.5</strong>) what one calls "Mapping" is done through the web.xml
+                file
+            </li>
+            <li class="next">In the new implementation, this mapping is done directly in the file thanks to the <code>@WebServlet</code>
+                annotation
+            </li>
+        </ul>
+        <p class="next">Example of a Web.xml, and explanation of the mapping concept</p>
+
+        <footer>
+
+        </footer>
+    </div>
+</section>
+<section class="slide">
+    <div>
+        <h2>Servlets (3)</h2>
+
+        <p>Make a servlet and call it from a JSP:</p>
+        <ul>
+            <li>In that exercise, you have to make your own servlet, map it in your web application and call it from the
+                JSP
+            </li>
+            <li>The servlet should update a counter (<code>int counter</code>) at each call</li>
+            <li>Find the better way to store the variable</li>
+        </ul>
+        <footer>
+
+        </footer>
+    </div>
+</section>
+
+
+<div class="progress">
+    <div></div>
+</div>
+<script src="../resources/shower.min.js"></script>
+
+<!-- Copyright © 2013 Yours Truly, Famous Inc. -->
+</body>
+</html>

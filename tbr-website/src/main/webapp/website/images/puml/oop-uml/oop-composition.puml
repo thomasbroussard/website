@@ -1,0 +1,6 @@
+@startuml
+left to right direction
+
+Book "1" *-- " 1..n" Page
+Cover "0..1" --o "1" Book
+@enduml

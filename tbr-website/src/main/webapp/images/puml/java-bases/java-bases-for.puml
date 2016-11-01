@@ -1,0 +1,15 @@
+@startuml
+
+
+start
+while (i < 10)
+
+  :instruction;
+  note right
+      auto-
+      increment
+  end note
+endwhile
+
+stop
+@enduml

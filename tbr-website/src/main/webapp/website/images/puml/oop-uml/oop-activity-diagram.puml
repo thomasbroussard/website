@@ -1,0 +1,20 @@
+@startuml
+start
+-authentication
+if (authenticated ?) then
+repeat
+ -menu
+ fork
+   :Create;
+   fork again
+   :Update;
+   fork again
+   :Delete;
+end fork;
+
+repeat while (continue?)
+else
+endif
+stop
+
+@enduml

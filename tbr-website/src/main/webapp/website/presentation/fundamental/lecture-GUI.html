@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>OO design & Java Fundamental Period - Lecture 7</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=792, user-scalable=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <link rel="stylesheet" href="../resources/styles/screen.css"/>
+    <link rel="stylesheet" href="../../stylesheets/custom.css"/>
+    <link rel="stylesheet" href="../../stylesheets/github-rainbow.css">
+    <link rel="shortcut icon" href="../../images/favicon.ico"/>
+</head>
+<body class="list">
+<!--
+    Debug class on <body> enables
+    cyan grid on slides
+    -->
+<header class="caption">
+    <h1>Java Fundamental period - Additional Lecture</h1>
+    <p>Conceiving a Rich UI application thanks to Java</p>
+</header>
+
+<section class="slide">
+    <div>
+        <h2>Constructors : recall</h2>
+
+        <ul>
+            <li><strong>Definition</strong>
+
+                <div>A <strong>constructor</strong> is a dedicated mechanism that is necessary to construct the object.
+                    The mechanism of using a
+                    constructor to build a new instance is called <strong>instantiation</strong></div>
+            </li>
+            <li><strong>Parameters</strong>
+
+                <div>The constructor can take parameters, like a method, to initialize the current
+                    <strong>instance</strong> with a
+                    particular value
+                </div>
+            </li>
+        </ul>
+
+
+    </div>
+</section>
+<section class="slide">
+    <div>
+        <h2>Constructors : schema</h2>
+
+        <div class="side-by-side">
+        <pre><code class="java">package fr.tbr.exercises;
+
+/**
+ * Example of a car, constructor with
+ * a "color" parameter
+ * @author Tom
+ */
+public class Car {
+	private String color;
+
+	public Car(String color) {
+		this.color = color;
+	}
+
+}</code>
+        </pre>
+        </div>
+
+        <div class="side-by-side">
+
+
+            <div class="img-container">
+                <object class="wide" data="../../images/svg/java-bases-instantiation-example.svg"></object>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="slide">
+    <div>
+        <h2>Class vs Instance</h2>
+        <ul>
+            <li>Notice in the previous example the <strong><code>this</code></strong> keyword.</li>
+            <li><strong><code>this</code></strong> allows to access to the <strong>current instance</strong> values</li>
+            <li>An <strong>instance</strong> is a representation with some particular values of the
+                <strong>class</strong>, Examples:
+                <ul>
+                    <li>A blue car is a representation of the class Car</li>
+                    <li>You are representations of the Human class.
+                        <div>The class Human, is describing the shape of each Human. You are a specific representation
+                            (with your own characteristics) of this class
+                        </div>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</section>
+
+<section class="slide">
+    <div>
+        <h2>Class vs Instance (2)</h2>
+        <ul>
+            <li>The <strong><code>this</code></strong> keyword can be used in any
+                non-<strong><code>static</code></strong> methods
+            </li>
+            <li>Example: interest calculation in the bank account system
+            <pre><code class="java">/**
+ * return the calculated interest on one year
+ * warning, this method updates the balance with the result of that computation
+ * @return the interest
+ */
+public double calculateInterest(){
+	double	result = this.interestRate * this.balance;
+    this.balance += result; //equivalent to this.balance = this.balance + result
+    return result;
+}</code></pre>
+            </li>
+        </ul>
+        <div>To precise whether you are using a local variable or a class field, the <code>this</code> keyword is
+            strongly recommended
+        </div>
+    </div>
+</section>
+<section class="slide">
+    <div>
+        <h2>Taking advantage of inheritance</h2>
+        <ul>
+            <li>The inheritance mechanism should always represent a <code>IS-A</code> relationship</li>
+            <li>When it applies, this relationship allows to factor a lot of code</li>
+            <li>Example: Inheritance from quadrilateral to rectangle</li>
+        </ul>
+        <div class="side-by-side">
+            <pre><code class="java">
+public class Quadrilateral {
+
+	private double sideA;
+	private double sideB;
+	private double sideC;
+	private double sideD;
+    /*...*/
+	public double calculatePerimeter(){
+		return this.sideA + this.sideB
+        + this.sideC + this.sideD;
+	}
+
+}</code></pre>
+        </div>
+        <div class="side-by-side">
+            <pre><code class="java">public class Rectangle extends Quadrilateral{
+ public Rectangle(double height, double width)
+ {
+   super (height, height, width, width);
+ }
+
+}
+</code></pre>
+        </div>
+
+    </div>
+</section>
+<section class="slide">
+    <div>
+        <h2>Taking advantage of inheritance (2)</h2>
+        <ul>
+            <li>Notice the <code>super</code> keyword: it allows the access of the inherited Class (here the
+                Quadrilateral Class)
+            </li>
+            <li>As the Rectangle Class inherits from the Quadrilateral class, you don't have to write the <code>calculatePerimeter()</code>
+                method again
+            </li>
+        </ul>
+        <strong>Warning: </strong> The inheritance mechanism allows natural code factoring, but if the relationship
+        between inheriting objects is not a real <strong>IS-A</strong>
+        relationship, the code maintenance can be very painful
+    </div>
+</section>
+
+<section class="slide">
+    <div>
+        <h2>Exercise</h2>
+
+        <p>In the geometry example found <a href="../../work/java/tutorials/fundamental/first-program.xhtml">here</a>,
+            add the <code>Ellipse</code> object and try to generalize the <code>Circle</code> class methods</p>
+
+    </div>
+</section>
+
+
+<section class="slide">
+    <div>
+        <h2>Inheritance problems</h2>
+        <div>When you are using inheritance you have to face several problems</div>
+        <ul>
+            <li>You can't change the characteristics of a <code>super</code> object <strong>methods</strong></li>
+            <li>You have to define clearly what methods can be overridden or not</li>
+            <li>You have to foresee that the behaviour of the overridden methods can be unpredictable</li>
+        </ul>
+    </div>
+</section>
+
+<div class="progress">
+    <div></div>
+</div>
+<script src="../resources/shower.min.js"></script>
+<script src="../../scripts/rainbow/rainbow.js"></script>
+</body>
+</html>

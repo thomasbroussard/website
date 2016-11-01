@@ -1,0 +1,24 @@
+@startuml
+
+class CommercialCar {
+	-String commercialCompany
+	+CommercialCar(String model, String brand, String commercialComp)
+}
+class Car {
+	-String model
+	-String brand
+	+Car()
+	+Car(String model, String brand)
+	+String toString()
+}
+
+class SportCar {
+	-String transmissionType
+	+SportCar(String model, String brand, String transmission)
+}
+class Car {
+}
+Car <|-- SportCar
+Car <|-- CommercialCar
+
+@enduml

@@ -1,0 +1,8 @@
+@startuml
+start
+if(gate) then (branch1)
+else (branch2)
+endif
+stop
+
+@enduml

@@ -1,0 +1,22 @@
+@startuml
+left to right direction
+
+Class Mammals{
+    - hotBlood
+
+    + breastFeeding()
+}
+
+Class QuadrupedMammals extends Mammals{
+    -leg[4]
+
+    + run()
+}
+
+Class Wolf extends QuadrupedMammals{
+    - yellowEye[2]
+
+    + packHunt()
+}
+
+@enduml

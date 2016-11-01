@@ -1,0 +1,20 @@
+@startuml
+left to right direction
+
+class Account{
+    number
+    currency
+    balance
+    owner
+}
+
+class Person{
+    lastName
+    firstName
+    address
+    birthDate
+}
+
+Account "*" -- "1..2" Person
+
+@enduml

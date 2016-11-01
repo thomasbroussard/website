@@ -1,0 +1,10 @@
+@startuml
+class Car {
+	-String model
+	-String brand
+	+Car()
+	+Car(String model, String brand)
+	+String toString()
+}
+
+@enduml

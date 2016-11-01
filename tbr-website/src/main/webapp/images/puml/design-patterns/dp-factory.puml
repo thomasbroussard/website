@@ -1,0 +1,28 @@
+@startuml
+'skinparam linetype ortho
+
+interface Product{
+
+}
+class ConcreteProduct{
+
+}
+
+class Factory{
+
+}
+
+
+class Client{
+
+}
+
+ConcreteProduct <|.. Product
+Factory --> Product : Handles the creation of a concrete product
+Client --> Factory : ask for a new product
+Client --> ConcreteProduct : uses
+Factory --> Client : gives a product of the required type
+
+
+
+@enduml

@@ -1,0 +1,24 @@
+@startuml
+Class Triangle{
+    base
+    height
+    sideA
+    sideB
+
+     getArea()
+    getPerimeter()
+}
+Class Square{
+    side
+
+    getArea()
+    getPerimeter()
+}
+Class Circle{
+    radius
+
+    getArea()
+    getPerimeter()
+}
+
+@enduml

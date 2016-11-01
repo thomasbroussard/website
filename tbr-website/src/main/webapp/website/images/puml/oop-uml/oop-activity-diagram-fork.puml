@@ -1,0 +1,13 @@
+@startuml
+start
+
+fork
+   :Create;
+   fork again
+   :Update;
+   fork again
+   :Delete;
+ end fork;
+stop
+
+@enduml

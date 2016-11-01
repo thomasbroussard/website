@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>OO design & Java Fundamental Period - Lecture 5</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=792, user-scalable=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <link rel="stylesheet" href="../resources/styles/screen.css"/>
+    <link rel="stylesheet" href="../../stylesheets/custom.css"/>
+    <link rel="stylesheet" href="../../stylesheets/github-rainbow.css">
+</head>
+<body class="list">
+<!--
+    Debug class on <body> enables
+    cyan grid on slides
+    -->
+<header class="caption">
+    <h1>Java Fundamental period - Lecture 5</h1>
+
+    <p>Java : Logic and Operations, control and repetition statements</p>
+</header>
+
+<section class="slide">
+    <div>
+        <h2>Summary of the last lecture</h2>
+        <ul>
+            <li>We learnt to use eclipse to write and run java code</li>
+            <li>We began to see the control flow statement through the <code>if(){}else{}</code> and <code>switch(){case:}</code>
+                statements
+            </li>
+        </ul>
+        <div><strong>How to represent and organize the flow of our program ?</strong></div>
+    </div>
+</section>
+
+<section class="slide">
+    <div>
+        <h2>Program execution flow : Activity Diagram</h2>
+
+        <div>Activity diagrams help developers to represent the succession of tasks necessary to complete the
+            algorithm
+        </div>
+        <ul>
+            <li>The activity diagram is very less difficult to write than a class diagram</li>
+            <li>The <strong>activity</strong> diagram can often be confused with the <strong>state</strong> diagram,
+                which we will see just after
+            </li>
+            <li>The activity diagram can naturally be written from the natural language expression of the algorithm</li>
+        </ul>
+    </div>
+</section>
+<section class="slide">
+    <div>
+        <h2>Program execution flow : Activity Diagram (2)</h2>
+
+        <div>Example of an activity diagram usage : first part of the Java project</div>
+        <em>"Your application should comport a scenario which authenticates a user, and makes him use the Identity
+            management through predefined methods, Create, Update, Delete ..."</em>
+    </div>
+</section>
+<section class="slide">
+
+    <h2>Program execution flow : Activity Diagram (3)</h2>
+
+    <div class="img-container">
+        <img class="wide" src="../../images/png/oop-activity-diagram.png"/>
+    </div>
+
+</section>
+
+<section class="slide">
+    <div>
+        <h2>Program execution flow : Activity Diagram (4)</h2>
+        <ul>
+            <li>
+                <div style="width: 60%; display: inline-block; vertical-align: middle">
+                    <strong>Activity</strong>
+                    symbolizes an operation in the algorithm
+
+                </div>
+                <div style="width: 30%; display: inline-block; vertical-align: middle"><img
+                        style="vertical-align: middle; text-align: center"
+                        src="../../images/svg/oop-activity-diagram-activity.svg"></div>
+            </li>
+            <li class="next">
+                <div style="width: 60%; display: inline-block; vertical-align: middle">
+                    <strong>Gate</strong>
+                    symbolizes a decision point or a join in the treatment
+
+                </div>
+                <img style="vertical-align: middle; text-align: center"
+                     src="../../images/svg/oop-activity-diagram-gate.svg"></li>
+        </ul>
+        <div style="width: 60%; display: inline-block; vertical-align: middle"></div>
+
+    </div>
+</section>
+
+<section class="slide">
+    <div>
+        <h2>Program execution flow: Activity Diagram (5)</h2>
+        <ul>
+            <li>
+                <div style="width: 60%; display: inline-block; vertical-align: middle">
+                    <strong>Fork</strong>
+                    Symbolizes several operations run in parallel
+
+                </div>
+                <div style="width: 30%; display: inline-block; vertical-align: middle"><img
+                        style="vertical-align: middle; text-align: center"
+                        src="../../images/svg/oop-activity-diagram-fork.svg"></div>
+            </li>
+        </ul>
+
+
+    </div>
+</section>
+
+<section class="slide">
+    <div>
+        <h2>Exercise (part of the project) : Realize the authentication of the application</h2>
+
+        <div>Use what you learnt about the user input/output to realize a login functionality</div>
+        <ul>
+            <li>This corresponds to the first part of the activity diagram</li>
+            <li>The good "credentials" (couple of a login and a password) will be hardcoded</li>
+            <li>If the user is authenticated, he is proposed a <strong>menu</strong>, inviting him to select among 3
+                operations (Create, Modify, Delete)
+            </li>
+        </ul>
+    </div>
+</section>
+
+<section class="slide">
+    <div>
+        <h2>Repeat operations in Java : the <code>while</code> loop</h2>
+
+        <div class="side-by-side">
+            <pre>
+<code class="java">// while
+int size = 10;
+int i = 0;
+while (i < size) {
+ //Some repeated instruction
+ i++;
+}
+	</code></pre>
+        </div>
+        <div class="side-by-side img-container">
+<img class="wide" src="../../images/svg/java-bases-while.svg" />
+        </div>
+    </div>
+</section>
+<section class="slide">
+    <div>
+        <h2>Repeat operations in Java : the <code>do-while</code> loop</h2>
+
+        <div class="side-by-side">
+            <pre>
+<code class="java">// while
+int size = 10;
+int i = 0;
+do{
+ //Some repeated instruction
+ i++;
+} while (i < size);
+	</code></pre>
+        </div>
+        <div class="side-by-side img-container">
+<img class="wide" src="../../images/svg/java-bases-do-while.svg" />
+        </div>
+    </div>
+</section>
+
+<section class="slide">
+    <div>
+        <h2>Repeat operations in Java : the <code>for</code> loop</h2>
+
+        <div class="side-by-side">
+            <pre>
+<code class="java">// for-loop
+String[] table = new String[10];
+for (int i = 0; i < 10; i++) {
+	String current = table[i];
+	System.out.println(current);
+}
+
+// for-loop, "foreach" way
+for (String s : table) {
+	System.out.println(s);
+}
+	</code></pre>
+        </div>
+        <div class="side-by-side img-container">
+<img class="wide" src="../../images/svg/java-bases-for.svg" />
+        </div>
+    </div>
+</section>
+
+<section class="slide">
+    <div>
+        <h2>Java data structures: Arrays</h2>
+        <ul>
+            <li>Dimension
+            <pre>
+<code class="java">//Declares a table of 10 strings
+String[] table = new String[10];
+int tableLength = table.length;
+</code></pre>
+            </li>
+            <li>Access by index
+                <pre>
+<code class="java">//Accesses the occurrence at the first index
+String occurrence = table[0];
+</code></pre>
+            </li>
+        </ul>
+
+    </div>
+</section>
+<section class="slide">
+    <div>
+        <h2>Exercise: A factorial implementation</h2>
+        <div>According to the preceding slides, write the factorial computing in 3 different iterating ways</div>
+        <strong>Hint :</strong><em> Remember that the factorial is defined by : <img src="http://upload.wikimedia.org/math/9/3/9/939c013423574cad70f33eaa7dd68f0c.png" /></em>
+
+        <div><strong>Try to enforce some best practices</strong></div>
+        <ul>
+            <li>Make a dedicated class named <code>Factorial</code></li>
+            <li>Write three static methods (one for each implementation) and think about the return type</li>
+            <li>Write one <code>static void main</code> method calling all the three methods with parameters</li>
+        </ul>
+    </div>
+</section>
+<section class="slide">
+    <div>
+        <h2>Exercise: Completing the project menu</h2>
+        <div class="side-by-side">Complete the project application flow according to the activity diagram</div>
+        <div class=" side-by-side img-container">
+            <img class="wide" src="../../images/png/oop-activity-diagram.png"/>
+        </div>
+
+    </div>
+</section>
+
+
+<div class="progress">
+    <div></div>
+</div>
+<script src="../resources/shower.min.js"></script>
+<script src="../../scripts/rainbow/rainbow.js"></script>
+</body>
+</html>

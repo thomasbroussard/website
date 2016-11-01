@@ -1,0 +1,33 @@
+@startuml
+left to right direction
+(*) --> PoolManager
+Partition "Application Initialization" {
+    "Init code" --> PoolManager
+    note right
+        the init code loads the
+        pool manager with reusable
+        objects
+    endnote
+
+}
+Partition PoolManagerIntern {
+    PoolManager --> Poolable1
+    PoolManager --> Poolable2
+    PoolManager ..> PoolableN
+    Poolable1 --> JDBC Connection 1
+    Poolable2 --> JDBC Connection 2
+}
+Partition "Pool Usage" {
+    "Program code" --> PoolManager
+    note right
+     Code requests a connection to the poolmnager
+     The PoolManager serves a free connection to
+     the Program code
+     end note
+    "Program code"--> "Connection Usage"
+    note right
+        and then uses it
+    end note
+}
+
+@enduml

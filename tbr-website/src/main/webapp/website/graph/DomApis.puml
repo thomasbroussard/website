@@ -1,0 +1,25 @@
+@startuml
+left to right direction
+rectangle DomAPIs{
+	(getChildNodes)
+	(getElementsByTagName "identity")
+}
+note right of (getChildNodes)
+	the getChildNodes() API
+	gets all the nodes regardless
+	of their tag name
+endnote
+note right of (getElementsByTagName "identity")
+	the getElementsByTagName() API
+	gets all the nodes with the given
+	tag name as a parameter
+endnote
+
+(getChildNodes) -- (Node 1)
+(getChildNodes) -- (Node 2)
+(getChildNodes) -- (Node n)
+
+(getElementsByTagName "identity") -- (identity 1)
+(getElementsByTagName "identity") -- (identity 2)
+(getElementsByTagName "identity") -- (identity n)
+@enduml

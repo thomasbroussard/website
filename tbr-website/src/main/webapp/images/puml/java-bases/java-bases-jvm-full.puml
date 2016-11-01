@@ -1,0 +1,46 @@
+@startuml
+left to right direction
+skinparam packageStyle rect
+
+Developer --> .java
+
+Rectangle DevelopmentOS {
+    Rectangle .java {
+
+    }
+    .java --> (Compiler)
+
+    Rectangle .class{
+
+    }
+
+    (Compiler) --> .class
+    .class -u-> Classes : deployment
+
+    Rectangle JDK #orange{
+
+    }
+    JDK .. (Compiler)
+
+}
+
+Rectangle TargetOS{
+    Rectangle JRE #orange{
+
+    }
+    JRE .. (JVM)
+    Frame "Binaries" {
+        rectangle Classes{
+        }
+    }
+    Classes --> (JVM) : <b>Interpretation
+    (JVM) --> (OS Core Operations) : <b>Translation</b>
+
+}
+
+rectangle Output{
+
+}
+(OS Core Operations) --> Output : <b>Execution result
+
+@enduml

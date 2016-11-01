@@ -1,0 +1,10 @@
+@startuml
+start
+repeat
+    :operation;
+    :i++;
+repeat while (i < 10)
+
+stop
+
+@enduml

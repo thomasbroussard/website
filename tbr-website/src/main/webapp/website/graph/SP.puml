@@ -1,0 +1,8 @@
+@startuml
+(Identity)--(Assignment)
+(Assignment)--(Permission)
+
+legend
+Subject Permission Assignment
+endlegend
+@enduml

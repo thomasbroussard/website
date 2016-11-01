@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8"/>
+    <title>Java cheat sheets</title>
+    <meta content="text/html"/>
+
+    <link rel="shortcut icon" href="../../../../images/favicon.ico"/>
+    <!-- Basic Page Needs
+  ================================================== -->
+    <meta name="description" content="A bunch of tips for the Java programming language"/>
+    <meta name="author" content="Thomas Broussard"/>
+
+    <!-- Mobile Specific Metas
+  ================================================== -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+    <!-- CSS
+  ================================================== -->
+    <link rel="stylesheet" href="../../../../stylesheets/base.css"/>
+    <link rel="stylesheet" href="../../../../stylesheets/layout.css"/>
+
+    <link rel="stylesheet" type="text/css" href="http://thomas-broussard.fr/stylesheets/github-rainbow.css"/>
+    <!-- Scripts
+    =============================================== -->
+
+
+    <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <script type="text/javascript" src="../../../../scripts/rainbow/rainbow.js"></script>
+    <script type="text/javascript" src="../../../../scripts/tbr/cheatsheet.js"></script>
+
+</head>
+<body>
+<div class="cheat" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+    <div class="sheetfilter">
+        <!--    <label for="filter">Filter</label>-->
+
+        <input class="filterinput" placeholder="Filter (Nothing allows to see all)" onkeyup="filter()" id="filter"
+               type="text"/>
+
+    </div>
+    <div class="sheet" id="java.lang.primitive" data-tags="primitive, types, java">
+
+        <h2>Primitive types <a href="#java.lang.primitive" class="bookmark">bookmark</a></h2>
+
+
+			<pre>
+			<code class="java">
+/**
+ * Show how to use primitive types
+ */
+public void primitiveTypes() {
+	// this is an integer, but should not be
+	// used as a numerical value
+	// chars represent character symbols
+	char character = 0;
+
+	// this is a byte, it is unsigned
+	byte veryShortInt = 0;
+
+	// this is a short integer, it is signed
+	short shortInt = 0;
+
+	// it's a normal range integer, it is signed
+	int normalInt = 0;
+
+	//  it's a wide range integer; it is signed,
+	//  notice that to be a long, you have to put
+	//  a "l" after the number
+	long longInt = 022222222222222222l;
+
+	// This is a floating point number
+	float floatingPoint = 0;
+
+	// this is a floating point number with a
+	// wide range
+	double bigFloatingPoint = 0;
+
+	// this is a boolean (can have true or false as
+	// a value)
+	boolean aBooleanExample;
+}</code>
+			</pre>
+    </div>
+    <div class="sheet" id="java.lang.autoboxing">
+        <h2>Autoboxing <a href="#java.lang.autoboxing" class="bookmark">bookmark</a></h2>
+			<pre>
+			<code class="java">
+/**
+ * Shows how primitive types can be "boxed" (automatically cast) to Objects
+ */
+public void autoBoxing() {
+	char character = 0;
+	byte veryShortInt = 0;
+	short shortInt = 0;
+	int normalInt = 0;
+	long longInt = 0l;
+
+	float floatingPoint = 0;
+	double bigFloatingPoint = 0;
+
+	boolean aBooleanExample = true;
+
+	// Object style
+
+	Byte byteSample = veryShortInt;
+	Short shortSample = shortInt;
+	Integer intSample = normalInt;
+	Long longSample = longInt;
+
+	Float floatSample = floatingPoint;
+	Double doubleSample = bigFloatingPoint;
+	Boolean booleanSample = aBooleanExample;
+}
+			</code>
+			</pre>
+
+    </div>
+    <div class="sheet" id="java.util.Date">
+        <h2>Dates <a href="#java.util.Date" class="bookmark">bookmark</a></h2>
+			<pre>
+			<code class="java">public Date stringToDate(){
+    String format = "yyyy/MM/dd - HH:mm:ss.SSS";
+	SimpleDateFormat simpleDateFormat = new SimpleDateFormat(format);
+	String stringInput = "2014/05/25 - 16:58:10.302";
+	try {
+		Date date = simpleDateFormat.parse(stringInput);
+		return date;
+		//Use the date Object
+	} catch (ParseException e) {
+		e.printStackTrace();
+	}
+	return null;
+}
+
+public String dateToString(Date date){
+    String format = "yyyy/MM/dd - HH:mm:ss.SSS";
+	SimpleDateFormat simpleDateFormat = new SimpleDateFormat(format);
+	String stringResult = simpleDateFormat.format(date);
+	return stringResult;
+}</code>
+</pre>
+
+    </div>
+    <div class="sheet" id="java.lang.String">
+        <h2>Strings <a href="#java.lang.String" class="bookmark">bookmark</a></h2>
+			<pre>
+			<code class="java">String firstString = "Sample String";
+String secondString = "Second String";
+
+System.out.println("Testing concatenation");
+String concatResult = firstString + " " + secondString;
+System.out.println(concatResult);
+
+System.out.println("Testing replacement");
+concatResult = concatResult.replaceAll("St" , "" );
+System.out.println(concatResult);
+
+//Full spec here
+//http://docs.oracle.com/javase/7/docs/api/java/util/Formatter.html
+String formattedString = String.format("%tD", new Date());
+System.out.println(formattedString);
+
+
+System.out.println("Testing immutability");
+stringImmutability(concatResult);
+System.out.println(concatResult);
+
+//StringBuilder is a class to operate concatenation over Strings
+StringBuilder sb = new StringBuilder(concatResult);
+System.out.println("Testing mutability of other objects");
+objectsMutability(sb);
+System.out.println(String.valueOf(sb)); //Obtain a string representation</code>
+</pre>
+
+    </div>
+    <div class="sheet" id="java.util.StringBuilder">
+        <h2>StringBuilder <a href="#java.util.StringBuilder" class="bookmark">bookmark</a></h2>
+			<pre>
+			<code class="java">//StringBuilder is a class to operate concatenation over Strings
+StringBuilder sb = new StringBuilder("test");
+sb.append(" java");
+System.out.println(sb.toString()); //Obtain a string representation</code>
+</pre>
+
+    </div>
+
+</div>
+<!-- container -->
+
+
+</body>
+
+</html>

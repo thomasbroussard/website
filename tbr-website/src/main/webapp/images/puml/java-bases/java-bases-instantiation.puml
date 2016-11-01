@@ -1,0 +1,13 @@
+@startuml
+title
+General instantiation mechanism
+endtitle
+Rectangle "Class Definition"{
+    (Properties) <-- (Constructor) : initializes \nproperties for each\n instance
+}
+Rectangle Instances{
+    (Constructor) --> (Instance1)
+    (Constructor) --> (Instance2)
+    (Constructor) --> (Instance3)
+}
+@enduml

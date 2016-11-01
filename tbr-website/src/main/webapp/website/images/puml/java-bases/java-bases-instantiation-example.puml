@@ -1,0 +1,14 @@
+@startuml
+title
+Example
+endtitle
+Rectangle "Car Construction Scheme"{
+    (Color) <-- (Assembly chain) : sets the color \nfor each  car
+}
+Rectangle Instances {
+    (Assembly chain) --> (Car1) : Color = red
+    (Assembly chain) --> (Car2) : Color = green
+    (Assembly chain) --> (Car3) : Color = blue
+}
+
+@enduml

@@ -1,0 +1,579 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+
+    <!-- Basic Page Needs
+  ================================================== -->
+    <meta charset="utf-8"/>
+    <title>(Not) Just Java</title>
+    <meta name="description" content=""/>
+    <meta name="author" content=""/>
+
+    <!-- Mobile Specific Metas
+  ================================================== -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="description" content=""/>
+    <meta name="author" content=""/>
+    <link rel="shortcut icon" href="../../../../images/favicon.ico"/>
+    <link href="../../../../stylesheets/doc-bs.css" rel="stylesheet"/>
+    <link href="../../../../stylesheets/custom.css" rel="stylesheet"/>
+    <title>(Not) Just Java</title>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css"/>
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css"/>
+
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+
+</head>
+<body>
+<!-- Main jumbotron for a primary marketing message or call to action -->
+<!-- Docs page layout -->
+<div class="bs-docs-header" id="content">
+    <div class="container">
+        <h1>Java Specialization : Project</h1>
+
+        <p>Description of the specialization period project</p>
+
+    </div>
+
+</div>
+
+<div class="container bs-docs-container counter">
+
+<div class="row">
+<div class="col-md-3">
+    <div class="bs-docs-sidebar hidden-print" role="complementary">
+        <ul class="nav bs-docs-sidenav">
+
+            <li>
+                <a href="#intro">Main</a>
+            </li>
+            <li>
+                <a href="#login">The login page</a>
+            </li>
+            <li>
+                <a href="#ilm">The Identity Lifecycle Management</a>
+                <ul class="nav">
+                    <li><a href="#ilm.fd"> Feature description</a></li>
+                    <li><a href="#ilm.fr">Feature realization</a></li>
+
+                        <li><a href="#ilm.fl.wp">Example - Welcome Page</a></li>
+                        <li><a href="#ilm.fl.is">Example - Identity Search</a></li>
+                        <li><a href="#ilm.fl.is">Example - Identity Modification</a></li>
+
+
+                </ul>
+            </li>
+            <li>
+                <a href="#xmlgen">The XML-based form generation</a>
+            </li>
+            <li>
+                <a href="#documentation">Application documentation</a>
+            </li>
+        </ul>
+
+        <a class="back-to-top" href="#content">
+            Back to top
+        </a>
+    </div>
+
+
+</div>
+<div class="col-md-9" role="main">
+<ol class="breadcrumb">
+    <li><a href="../../../../index.xhtml">Home</a></li>
+    <li><a href="../../../index.xhtml">Work</a></li>
+    <li><a href="../../index.xhtml">Java</a></li>
+    <li><a href="../index.xhtml">Courses</a></li>
+    <li class="active">Project - Specialization Period</li>
+</ol>
+<div class="bs-docs-section">
+<h1 id="main">IAM Project - Advanced Java Students</h1>
+
+<p class="lead">The next step in the IAM Project : The IAM Web Application</p>
+<div class="bs-callout bs-callout-info">
+    <p>This is the continuation of the previous project, that can be found <a href="./index.xhtml">here</a></p>
+</div>
+
+<h1 class="page-header" id="intro">Introduction</h1>
+
+<p>During this semester, we saw how to set up a web application. You should normally have an already
+    running Web Application (if this is not the case, contact me).</p>
+
+<p>The goal of this second project part is to make you use the maximum of your Java skills, around
+    an industrial-inspired application.</p>
+
+<p>To summarize what you have to use to fulfill this application:</p>
+<ul>
+    <li>Core Java concepts</li>
+    <li>Design Patterns</li>
+    <li>Java Server entities (JSP/Servlet)</li>
+    <li>Tools like And or Maven</li>
+    <li>Framework as Spring, Hibernate</li>
+</ul>
+
+<hr/>
+<h1 class="page-header" id="login">First Task : Implement a login page</h1>
+
+<h3 class="title" id="login-description">Feature description</h3>
+
+<p>At this step of the course you should have a running Web Application, this application should be
+    composed by at least two pages, the first displaying all the identities in the system, the other to
+    search an identity according to certain criteria.
+</p>
+
+<p>To improve the system, you should define a <code>User</code> object, allowing you to handle the
+    <strong>authentication phase</strong></p>
+
+<div class="bs-callout bs-callout-info">
+    <h4>The Authentication mechanism</h4>
+
+    <p>The Authentication mechanism of an application allows two things</p>
+    <ul>
+        <li>To deny access to unauthorized persons</li>
+        <li>To adapt the application according to the connected user rights</li>
+     </ul>
+    <p>Usually, the authentication is made through the concordance of a login/password couple, one can
+        manually check this concordance in a database, or delegate this check to a LDAP Directory.</p>
+</div>
+<h3 class="title" id="login-realization">Feature Realization</h3>
+
+<p>This task will involve :</p>
+<ul>
+    <li> a <code>JSP</code>, a <code>Servlet</code></li>
+    <li>A Database connection OR an LDAP connection (for that last technology, please refer to <a
+            href="http://projects.spring.io/spring-ldap/">Spring LDAP)</a>
+    </li>
+</ul>
+
+<div class="bs-callout bs-callout-info">
+    <h4>How to program efficiently in a Java Server context</h4>
+
+    <p>While developing this feature you will face some trouble when it comes to test your
+        functionality. To avoid to loose to much time by relaunching the whole application each time you
+        want to add or correct something, you can use <strong>JUnit</strong> which is the Unit Testing
+        Framework, seen during this course.
+    </p>
+
+    <p><strong>The fact that JUnit tests are present in your delivery will be part of the
+        evaluation</strong></p>
+</div>
+<p>Technical Hints :</p>
+<ul>
+    <li>The JSP will contain two fields, according to the description above (login and password) and a button
+        to submit the authentication
+    </li>
+    <li>Once the authentication is checked, if the authentication is successful, then the "user" (User
+        object) is stored in the <strong>session</strong> for further use. If the authentication fails, then
+        the user is notified of the failure thanks to a message displayed on the page
+    </li>
+</ul>
+<p>You can check a lot of login pages and authentication mechanism: gmail, facebook etc.</p>
+
+<h3 class="title">Feature living example</h3>
+
+
+<div class="bs-example">
+    <form role="form">
+        <div class="form-group">
+            <label for="exampleInputEmail1">Login</label>
+            <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Enter Login"/>
+        </div>
+        <div class="form-group">
+            <label for="exampleInputPassword1">Password</label>
+            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password"/>
+        </div>
+
+        <button type="submit" class="btn btn-default">Login</button>
+    </form>
+</div>
+
+
+
+
+<hr/>
+
+
+
+
+<h1 class="page-header" id="ilm">Second Task: Implement an Identity Lifecycle Management Process</h1>
+
+<h3 class="title" id="ilm.fd">Feature Description</h3>
+
+<p> This is the main project part: The main goal of that feature is to manage an Identity through a normalized
+    and scalable process.
+</p>
+
+<div class="bs-callout bs-callout-danger">
+    <h4>Important remark</h4>
+
+    <p>The "scalable" part of the process relies on a mechanism of a page generation according to a description
+        of the identity object based on the <code>xml</code>
+    </p>
+
+    <p>The description of this feature has a dedicated part : <a href="#xmlgen">XML Generation</a></p>
+</div>
+
+<p>To achieve that, we will need to define <strong>five</strong> pages :</p>
+<ul>
+    <li><span class="text-info"><strong>The Welcome page, which is a sort of dashboard</strong></span>: The
+        welcome page gathers all the
+        available actions for the user.
+        There are three main actions:
+        <ul>
+            <li>Disconnection: the connected user can, via a link, disconnect from the application, it takes him
+                to the login page
+            </li>
+            <li><strong>Identity Creation</strong>, <strong>Identity Search</strong>, two pages described below
+            </li>
+        </ul>
+    </li>
+    <li><span class="text-info"><strong>The Identity Creation Page</strong></span>, which is where the user will
+        input the identity information
+    </li>
+    <li><span class="text-info"><strong>The Identity Search Page</strong></span>, which is where the user will
+        be able to find identities by giving some
+        criteria. The user will have the ability to select one Identity and then have the choice to <strong>
+            Modify</strong>, or <strong>Delete</strong> it
+    </li>
+    <li><span class="text-info"><strong>The Identity Modification Page</strong></span>, which is basically the
+        same as the creation one, but with some
+        restriction (you cannot change the email address for instance)
+    </li>
+    <li><span class="text-info"><strong>The Identity Deletion Page</strong></span>, available through the search
+        page, which is the same as the creation page,
+        except all the form fields are empty
+    </li>
+</ul>
+
+<div class="text-center">
+    <img class="text-center img-responsive schema" src="../../../../images/svg/advpj_iamusecase.svg"
+         alt="IAM Web Application Schema"/>
+</div>
+
+<h3 class="title" id="ilm.fr">Feature Realization</h3>
+
+<p>To realize this feature, you will use one <code>JSP</code> by page, data will be transported thanks to the session
+    (global data) and via <code>&lt;form></code> element, triggering <code>servlet</code> treatments.</p>
+
+<p>One of the main subfeature is the usage of a database to store identity data, for that you can use either <strong
+        class="text-primary">Hibernate</strong> or <strong class="text-primary">JDBC</strong>. Remember to explain your
+    choice concerning the persistence technology.</p>
+
+<p>Please use the following examples, without fully copying them</p>
+
+
+<h3 class="title" id="ilm.fl.wp">Feature Living Example - Welcome Page</h3>
+
+<div class="bs-example">
+    <div class="jumbotron">
+        <div class="container">
+            <h1 class="text-info">Welcome to the IAM System </h1><a href="#">disconnect</a>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-6">
+                <h4>Identity Creation</h4>
+
+                <p>Thanks to this action, you can create a brand new Identity, you can click on the button below to
+                    begin</p>
+                <button>Create!</button>
+            </div>
+            <div class="col-xs-6">
+                <h4>Identity Search</h4>
+
+                <p>Thanks to this action, you can search an identity and then access to its information. Through this
+                    action, you can also modify or delete the wished identity</p>
+                <button>Search!</button>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+<hr/>
+<h3 class="title" id="ilm.fl.cp">Feature Living Example - Creation Page</h3>
+
+<div class="bs-example">
+
+    <div class="container">
+        <h2 class="text-info">New Identity Creation </h2>
+        <a href="#">&lt;&lt; back</a>
+    </div>
+    <form class="form-horizontal" role="form">
+        <div class="form-group">
+            <label for="firstName" class="col-sm-2 control-label">First Name</label>
+
+            <div class="col-sm-10">
+                <input type="email" class="form-control" id="firstName" placeholder="First Name"/>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="lastName" class="col-sm-2 control-label">Last Name</label>
+
+            <div class="col-sm-10">
+                <input type="email" class="form-control" id="email" placeholder="Last Name"/>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="lastName" class="col-sm-2 control-label">Email</label>
+
+            <div class="col-sm-10">
+                <input type="email" class="form-control" id="lastName" placeholder="Email"/>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="date" class="col-sm-2 control-label">Birth Date</label>
+
+            <div class="col-sm-10">
+                <input type="date" class="form-control" id="date" placeholder="Birth Date"/>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-2 control-label">...</label>
+        </div>
+
+
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <button type="submit" class="btn btn-default">Submit</button>
+            </div>
+        </div>
+    </form>
+
+</div>
+<hr/>
+<h3 class="title" id="ilm.fl.is">Identity Search</h3>
+
+<div class="bs-example">
+    <div class="container">
+        <h2 class="text-info">Identity Search </h2>
+        <a href="#">&lt;&lt; back</a>
+
+        <h3 class="text-info">Search Criteria</h3>
+    </div>
+
+
+    <form class="form-horizontal" role="form">
+        <div class="form-group">
+            <label for="firstName" class="col-sm-2 control-label">First Name</label>
+
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="firstNameSearch" placeholder="First Name"/>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="lastName" class="col-sm-2 control-label">Last Name</label>
+
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="lastNameSearch" placeholder="Last Name"/>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="lastName" class="col-sm-2 control-label">...</label>
+
+        </div>
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10 text-right">
+                <button type="submit" class="btn btn-primary">Search</button>
+            </div>
+        </div>
+    </form>
+    <div class="container">
+        <h3 class="text-info">Search Results</h3>
+
+        <form class="form-horizontal">
+            <div class="table-responsive">
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th>Selection</th>
+                        <th>UID</th>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Email</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td><input name="selection" type="radio"/></td>
+                        <td>1</td>
+                        <td>Thomas</td>
+                        <td>Broussard</td>
+                        <td>tbr@acompany.com</td>
+                    </tr>
+
+                    <tr>
+                        <td><input name="selection" type="radio"/></td>
+                        <td>2</td>
+                        <td>David</td>
+                        <td>Mahery</td>
+                        <td>dma@acompany.com</td>
+                    </tr>
+
+                    <tr>
+                        <td><input name="selection" type="radio"/></td>
+                        <td>3</td>
+                        <td>Quentin</td>
+                        <td>Serrano</td>
+                        <td>qse@acompany.com</td>
+                    </tr>
+
+                    </tbody>
+                </table>
+            </div>
+            <div class="form-group">
+                <div class=" col-sm-offset-2 col-sm-10 text-right">
+                    <button type="submit" class="btn btn-primary">Modify</button>
+                    <button type="submit" class="btn btn-primary">Delete</button>
+                    <button type="submit" class="btn btn-default">Cancel</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<hr/>
+<h3 class="title" id="ilm.fl.mp">Feature Living Example - Modification Page</h3>
+
+<div class="bs-example">
+
+    <div class="container">
+        <h2 class="text-info">Identity Modification</h2>
+        <a href="#">&lt;&lt; back</a>
+    </div>
+    <form class="form-horizontal" role="form">
+        <div class="form-group">
+            <label for="firstNameModif" class="col-sm-2 control-label">First Name</label>
+
+            <div class="col-sm-10">
+                <input type="email" class="form-control" id="firstNameModif" placeholder="First Name" value="Thomas"/>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="lastNameModif" class="col-sm-2 control-label">Last Name</label>
+
+            <div class="col-sm-10">
+                <input type="email" class="form-control" id="emailModif" placeholder="Last Name" value="Broussard"/>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="emailModif" class="col-sm-2 control-label">Email</label>
+
+            <div class="col-sm-10">
+                <input disabled="disabled" type="email" class="form-control" id="lastNameModif" placeholder="Email"
+                       value="tbr@acompany.com"/>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="dateModif" class="col-sm-2 control-label">Birth Date</label>
+
+            <div class="col-sm-10">
+                <input type="date" class="form-control" id="dateModif" placeholder="Birth Date" value="09/04/1986"/>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-2 control-label">...</label>
+        </div>
+
+
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <button type="submit" class="btn btn-default">Submit</button>
+            </div>
+        </div>
+    </form>
+
+</div>
+
+
+<h1 class="page-header" id="xmlgen">XML Generation</h1>
+
+<h3 class="title" id="xmlgen.fd">Feature Description</h3>
+
+<p>You've just seen examples of <strong>Identity forms</strong>. These forms sample are static, meaning that if the need
+    to have an extra parameter comes, we'll have to change each of the previous pages to add this field</p>
+
+<p>To avoid that, you'll have to develop a feature to provide an <strong>XML-based form template</strong>, describing
+    the available Identity fields proposed for input on the forms</p>
+
+<div class="bs-callout bs-callout-info">
+    To be defined with Mr. Perrot
+</div>
+
+<h1 class="page-header" id="documentation">Documentation Normalization</h1>
+
+<p>Being able to write a documentation at a standard and with a scientific approach is very appreciated in
+    companies </p>
+
+<p>Hereafter should be your table of content</p>
+<ol>
+    <li><span class="text-info">Subject description</span></li>
+    <li><span class="text-info">Subject analysis</span>
+        <ol>
+            <li>Major features</li>
+            <li>Application Feasibility</li>
+            <li>Data description</li>
+            <li>Expected results</li>
+            <li>Algorithms study</li>
+            <li>Scope of the application (limits, evolutions)</li>
+        </ol>
+    </li>
+    <li><span class="text-info">Conception</span>
+        <ol>
+            <li>Chosen algorithm</li>
+            <li>Data structures</li>
+            <li>Global application flow</li>
+            <li>Global schema and major features schema</li>
+        </ol>
+    </li>
+    <li><span class="text-info">GUI description</span>
+        <ol>
+            <li>&lt;One section by page&gt;</li>
+        </ol>
+    </li>
+    <li><span class="text-info">Configuration instructions</span></li>
+    <li><span class="text-info">Commented Screenshots</span></li>
+    <li><span class="text-info">Bibliography</span></li>
+</ol>
+</div>
+</div>
+
+</div>
+
+
+
+</div>
+
+<div id="footer">
+    <div class="container text-muted">
+        Thomas Broussard &#169; 2014
+    </div>
+</div>
+
+<!-- container -->
+
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+<script src="http://thomas-broussard.fr/scripts/bootstrap/doc/docs.min.js"></script>
+<script src="http://thomas-broussard.fr/scripts/rainbow/rainbow.js"></script>
+</body>
+
+</html>
