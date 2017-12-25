@@ -587,7 +587,7 @@ nav ul li, nav ol li {
 }
 
 nav li a,
-nav li a:active, {
+nav li a:active {
     font-size: 13px;
     color: #005b7f;
     text-decoration: none;
