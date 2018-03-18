@@ -1,4 +1,4 @@
-h1. Test-Driven Development (TDD), a practical example
+1. Test-Driven Development (TDD), a practical example
 
 
 bq. This page has been fully written by "Carol Guevara":https://www.linkedin.com/in/carolguevara/ and validated by Thomas Broussard
@@ -43,13 +43,13 @@ p. In the next window type "http://download.eclipse.org/technology/m2e/releases/
 
 p. Click next, accept the terms of license agreement, click on Finish.
 
+bq. In my case the process could not be completed since it was already installed in the system.
+Eclipse might need to be restarted.
 
 !images/availableSoftware.png! 
 
 
-p. *In my case the process could not be completed since it was already installed in the system.
 
-p. **Eclipse might need to be restarted.
 
 
 h2. Creating a new project with eclipse Neon
@@ -129,31 +129,4 @@ p. "https://www.mkyong.com/unittest/junit-spring-integration-example":https://ww
 
 p. "https://spring.io/guides/gs/maven":https://spring.io/guides/gs/maven
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- 
+p(breadcrumb). "Tutorials":../../../tutorials > Advanced > JUnit > JUnit with Eclipse
