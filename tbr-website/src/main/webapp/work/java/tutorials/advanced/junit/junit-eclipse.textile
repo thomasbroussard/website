@@ -1,4 +1,4 @@
-1. Test-Driven Development (TDD), a practical example
+h1. Test-Driven Development (TDD), a practical example
 
 
 bq. This page has been fully written by "Carol Guevara":https://www.linkedin.com/in/carolguevara/ and validated by Thomas Broussard
@@ -24,7 +24,7 @@ h2. JUnit with Maven
 
 h3. What is JUnit?
 
-p. JUnit is a widely used open sourced framework used to implement unit testing in Java.
+p. JUnit is a widely used open source framework used to implement unit testing in Java.
 
 
 h3. What is Maven?

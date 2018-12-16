@@ -1,4 +1,4 @@
-<html xmlns="http://www.w3.org/1999/xhtml"><head><meta content="text/html; charset=utf-8" http-equiv="Content-Type"/><title>Fundamental Java project : Quiz Manager </title><link href="style.css" rel="stylesheet" type="text/css"/><style>/*<![CDATA[*//*!
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta content="text/html; charset=utf-8" http-equiv="Content-Type"/><title>Introduction</title><link href="style.css" rel="stylesheet" type="text/css"/><style>/*<![CDATA[*//*!
  * Bootstrap v3.3.7 (http://getbootstrap.com)
  * Copyright 2011-2016 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
@@ -48,61 +48,6 @@
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
-@font-face {
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Roboto'), local('Roboto-Regular'), url(https://fonts.gstatic.com/s/roboto/v18/KFOmCnqEu92Fr1Mu72xKOzY.woff2) format('woff2');
-  unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
-}
-/* cyrillic */
-@font-face {
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Roboto'), local('Roboto-Regular'), url(https://fonts.gstatic.com/s/roboto/v18/KFOmCnqEu92Fr1Mu5mxKOzY.woff2) format('woff2');
-  unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
-}
-/* greek-ext */
-@font-face {
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Roboto'), local('Roboto-Regular'), url(https://fonts.gstatic.com/s/roboto/v18/KFOmCnqEu92Fr1Mu7mxKOzY.woff2) format('woff2');
-  unicode-range: U+1F00-1FFF;
-}
-/* greek */
-@font-face {
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Roboto'), local('Roboto-Regular'), url(https://fonts.gstatic.com/s/roboto/v18/KFOmCnqEu92Fr1Mu4WxKOzY.woff2) format('woff2');
-  unicode-range: U+0370-03FF;
-}
-/* vietnamese */
-@font-face {
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Roboto'), local('Roboto-Regular'), url(https://fonts.gstatic.com/s/roboto/v18/KFOmCnqEu92Fr1Mu7WxKOzY.woff2) format('woff2');
-  unicode-range: U+0102-0103, U+0110-0111, U+1EA0-1EF9, U+20AB;
-}
-/* latin-ext */
-@font-face {
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Roboto'), local('Roboto-Regular'), url(https://fonts.gstatic.com/s/roboto/v18/KFOmCnqEu92Fr1Mu7GxKOzY.woff2) format('woff2');
-  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
-}
-/* latin */
-@font-face {
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Roboto'), local('Roboto-Regular'), url(https://fonts.gstatic.com/s/roboto/v18/KFOmCnqEu92Fr1Mu4mxK.woff2) format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
 
 /* latin-ext */
 @font-face {
@@ -173,39 +118,18 @@ div.content {
 
 body{
 	background-color: #eee;
-	font-family: -apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';
+	font-family: 'Roboto';
 	font-size: 16px;
-}
-
-figcaption {
-
-    margin-bottom: -1px;
-    background: #eee;
-
-    border-bottom: 1px solid #aaa;
-	border-top : 1px solid #aaa;
-}
-
-figure {
-	max-width: 900px;
-    margin-top: 15px;
-    margin-bottom: 15px;
-    text-align: center;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    border: 1px solid #aaa;
-    border-radius: 2px;
-    text-align: center;
-    padding: 0px;
-    margin-left: auto;
-    margin-right: auto;
-
 }
 
 img {
 	max-width: 900px;
-	padding : 5px;
+	margin-top: 15px;
+	margin-bottom: 15px;
+	text-align: center;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 .breadcrumb {
@@ -231,6 +155,7 @@ img {
 }
 
 .head .title{
+    margin-left:330px;
     color: white;
     font-size: 44px;
     width: 100%;
@@ -239,8 +164,6 @@ img {
     display: table-cell;
     vertical-align: middle;
     height: 135px;
-    max-width: 1330px;
-    text-align: left;
 }
 
 .head {
@@ -272,10 +195,8 @@ img {
 .singleTitle h1:before {
 	content: "";
 }
-
-h3,h4{
-	font-weight: 500;
-    font-family: 'Roboto';
+h2,h3,h4{
+	font-weight: bold;
 }
 
 h1:before {
@@ -323,14 +244,8 @@ h1 {
 	counter-reset: h2;
 }
 
-
 h2 {
-	font-weight : bold;
 	counter-reset: h3;
-    border-bottom: 1px solid #ccc;
-    padding-bottom: 5px;
-    margin-bottom: 15px;
-   	margin-top: 35px;
 }
 
 h2.unnumbered {
@@ -464,6 +379,8 @@ blockquote {
 }
 object {
 	display: block;
+	border: 1px solid #aaa;
+	border-radius: 2px;
 	text-align: center;
 	padding: 20px;
 	margin-left: auto;
@@ -594,149 +511,7 @@ pre code {
 		margin-top: -13px;
 	}
 }
-/*]]>*/</style></head><body>   <div class="head " id="headDiv"><div class="title " id="titleDiv">Fundamental Java project : Quiz Manager </div></div><div class="content  singleTitle" id="content"><div class="toc " id="toc"><div class="lv2" id="menuHolder"><a class="scroll " href="#section-1" id="anchor-section-1">1. Introduction</a></div><div class="lv2" id="menuHolder"><a class="scroll " href="#section-2" id="anchor-section-2">2. Specifications</a></div><div class="lv3" id="menuHolder"><a class="scroll " href="#section-2-1" id="anchor-section-2-1">2.1. Types of question</a></div><div class="lv4" id="menuHolder"><a class="scroll " href="#section-2-1-1" id="anchor-section-2-1-1">2.1.1. The MCQ questions</a></div><div class="lv4" id="menuHolder"><a class="scroll " href="#section-2-1-2" id="anchor-section-2-1-2">2.1.2. The Open Questions</a></div><div class="lv4" id="menuHolder"><a class="scroll " href="#section-2-1-3" id="anchor-section-2-1-3">2.1.3. Associative questions</a></div><div class="lv4" id="menuHolder"><a class="scroll " href="#section-2-1-4" id="anchor-section-2-1-4">2.1.4. Common questions attributes</a></div><div class="lv2" id="menuHolder"><a class="scroll " href="#section-3" id="anchor-section-3">3. Realization</a></div><div class="lv3" id="menuHolder"><a class="scroll " href="#section-3-1" id="anchor-section-3-1">3.1. Main features</a></div><div class="lv3" id="menuHolder"><a class="scroll " href="#section-3-2" id="anchor-section-3-2">3.2. Bonus</a></div><div class="lv3" id="menuHolder"><a class="scroll " href="#section-3-3" id="anchor-section-3-3">3.3. Example of realization</a></div><div class="lv2" id="menuHolder"><a class="scroll " href="#section-4" id="anchor-section-4">4. Evaluation</a></div><div class="lv2" id="menuHolder"><a class="scroll " href="#section-5" id="anchor-section-5">5. Delivery</a></div><div class="lv3" id="menuHolder"><a class="scroll " href="#section-5-1" id="anchor-section-5-1">5.1. code delivery</a></div><div class="lv3" id="menuHolder"><a class="scroll " href="#section-5-2" id="anchor-section-5-2">5.2. How to submit?</a></div><div class="lv3" id="menuHolder"><a class="scroll " href="#section-5-3" id="anchor-section-5-3">5.3. When to submit ?</a></div></div><h2 id="section-1">Introduction</h2><p>This project is proposed to students in order to evaluate their skills for the fundamental period of Java Programming and UML.</p><p>This goal is achieved through the realization of a console application (+ GUI as possible bonus), which aims at managing digital quiz preparation and execution.</p><h2 id="section-2">Specifications</h2><p>The usual problem while preparing and running an evaluation, is to :</p><ul><li>Constitute an appropriate evaluation corresponding of the required level</li><li>Reuse former questions</li><li>Organize sample evaluations</li><li>Correct automatically the MCQ questions.</li></ul><figure><object><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="554px" preserveAspectRatio="none" style="width:275px;height:554px;" version="1.1" viewBox="0 0 275 554" width="275px" zoomAndPan="magnify"><defs><filter height="300%" id="fa75qnd" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><!--class Question--><rect fill="#FEFECE" filter="url(#fa75qnd)" height="61.8359" style="stroke: #A80036; stroke-width: 1.5;" width="98" x="11" y="484"/><ellipse cx="33.2" cy="500" fill="#ADD1B2" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;"/><path d="M35.9656,495.875 Q36.1219,495.6563 36.3094,495.5469 Q36.4969,495.4375 36.7156,495.4375 Q37.0906,495.4375 37.325,495.6953 Q37.5594,495.9531 37.5594,496.5625 L37.5594,498.0156 Q37.5594,498.625 37.325,498.8906 Q37.0906,499.1563 36.7156,499.1563 Q36.3719,499.1563 36.1688,498.9531 Q35.9656,498.7656 35.8563,498.25 Q35.8094,497.8906 35.6219,497.7031 Q35.2938,497.3281 34.6844,497.1094 Q34.075,496.8906 33.45,496.8906 Q32.6844,496.8906 32.0516,497.2188 Q31.4188,497.5469 30.9266,498.2969 Q30.4344,499.0469 30.4344,500.0781 L30.4344,501.1719 Q30.4344,502.4063 31.325,503.2266 Q32.2156,504.0469 33.8094,504.0469 Q34.7469,504.0469 35.4031,503.7969 Q35.7938,503.6406 36.2156,503.2031 Q36.4813,502.9375 36.6297,502.8594 Q36.7781,502.7813 36.9813,502.7813 Q37.3094,502.7813 37.5672,503.0391 Q37.825,503.2969 37.825,503.6406 Q37.825,503.9844 37.4813,504.3906 Q36.9813,504.9688 36.1844,505.2969 Q35.1063,505.75 33.8094,505.75 Q32.2938,505.75 31.0906,505.125 Q30.1063,504.625 29.4188,503.5547 Q28.7313,502.4844 28.7313,501.2031 L28.7313,500.0469 Q28.7313,498.7188 29.3484,497.5703 Q29.9656,496.4219 31.0594,495.8047 Q32.1531,495.1875 33.3875,495.1875 Q34.1219,495.1875 34.7703,495.3516 Q35.4188,495.5156 35.9656,495.875 Z "/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="50" x="48.8" y="504.9102">Question</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="12" x2="108" y1="516" y2="516"/><rect fill="none" height="6" style="stroke: #C82930; stroke-width: 1.0;" width="6" x="19" y="525.418"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="72" x="31" y="531.4189">String question</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="12" x2="108" y1="537.8359" y2="537.8359"/><!--class Exam--><rect fill="#FEFECE" filter="url(#fa75qnd)" height="61.8359" style="stroke: #A80036; stroke-width: 1.5;" width="73" x="59.5" y="295"/><ellipse cx="79" cy="311" fill="#ADD1B2" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;"/><path d="M81.7656,306.875 Q81.9219,306.6563 82.1094,306.5469 Q82.2969,306.4375 82.5156,306.4375 Q82.8906,306.4375 83.125,306.6953 Q83.3594,306.9531 83.3594,307.5625 L83.3594,309.0156 Q83.3594,309.625 83.125,309.8906 Q82.8906,310.1563 82.5156,310.1563 Q82.1719,310.1563 81.9688,309.9531 Q81.7656,309.7656 81.6563,309.25 Q81.6094,308.8906 81.4219,308.7031 Q81.0938,308.3281 80.4844,308.1094 Q79.875,307.8906 79.25,307.8906 Q78.4844,307.8906 77.8516,308.2188 Q77.2188,308.5469 76.7266,309.2969 Q76.2344,310.0469 76.2344,311.0781 L76.2344,312.1719 Q76.2344,313.4063 77.125,314.2266 Q78.0156,315.0469 79.6094,315.0469 Q80.5469,315.0469 81.2031,314.7969 Q81.5938,314.6406 82.0156,314.2031 Q82.2813,313.9375 82.4297,313.8594 Q82.5781,313.7813 82.7813,313.7813 Q83.1094,313.7813 83.3672,314.0391 Q83.625,314.2969 83.625,314.6406 Q83.625,314.9844 83.2813,315.3906 Q82.7813,315.9688 81.9844,316.2969 Q80.9063,316.75 79.6094,316.75 Q78.0938,316.75 76.8906,316.125 Q75.9063,315.625 75.2188,314.5547 Q74.5313,313.4844 74.5313,312.2031 L74.5313,311.0469 Q74.5313,309.7188 75.1484,308.5703 Q75.7656,307.4219 76.8594,306.8047 Q77.9531,306.1875 79.1875,306.1875 Q79.9219,306.1875 80.5703,306.3516 Q81.2188,306.5156 81.7656,306.875 Z "/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="31" x="94" y="315.9102">Exam</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="60.5" x2="131.5" y1="327" y2="327"/><rect fill="none" height="6" style="stroke: #C82930; stroke-width: 1.0;" width="6" x="67.5" y="336.418"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="47" x="79.5" y="342.4189">String title</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="60.5" x2="131.5" y1="348.8359" y2="348.8359"/><!--class MCQChoice--><rect fill="#FEFECE" filter="url(#fa75qnd)" height="75.6719" style="stroke: #A80036; stroke-width: 1.5;" width="98" x="168" y="288"/><ellipse cx="183" cy="304" fill="#ADD1B2" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;"/><path d="M185.7656,299.875 Q185.9219,299.6563 186.1094,299.5469 Q186.2969,299.4375 186.5156,299.4375 Q186.8906,299.4375 187.125,299.6953 Q187.3594,299.9531 187.3594,300.5625 L187.3594,302.0156 Q187.3594,302.625 187.125,302.8906 Q186.8906,303.1563 186.5156,303.1563 Q186.1719,303.1563 185.9688,302.9531 Q185.7656,302.7656 185.6563,302.25 Q185.6094,301.8906 185.4219,301.7031 Q185.0938,301.3281 184.4844,301.1094 Q183.875,300.8906 183.25,300.8906 Q182.4844,300.8906 181.8516,301.2188 Q181.2188,301.5469 180.7266,302.2969 Q180.2344,303.0469 180.2344,304.0781 L180.2344,305.1719 Q180.2344,306.4063 181.125,307.2266 Q182.0156,308.0469 183.6094,308.0469 Q184.5469,308.0469 185.2031,307.7969 Q185.5938,307.6406 186.0156,307.2031 Q186.2813,306.9375 186.4297,306.8594 Q186.5781,306.7813 186.7813,306.7813 Q187.1094,306.7813 187.3672,307.0391 Q187.625,307.2969 187.625,307.6406 Q187.625,307.9844 187.2813,308.3906 Q186.7813,308.9688 185.9844,309.2969 Q184.9063,309.75 183.6094,309.75 Q182.0938,309.75 180.8906,309.125 Q179.9063,308.625 179.2188,307.5547 Q178.5313,306.4844 178.5313,305.2031 L178.5313,304.0469 Q178.5313,302.7188 179.1484,301.5703 Q179.7656,300.4219 180.8594,299.8047 Q181.9531,299.1875 183.1875,299.1875 Q183.9219,299.1875 184.5703,299.3516 Q185.2188,299.5156 185.7656,299.875 Z "/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="66" x="197" y="308.9102">MCQChoice</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="169" x2="265" y1="320" y2="320"/><rect fill="none" height="6" style="stroke: #C82930; stroke-width: 1.0;" width="6" x="176" y="329.418"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="63" x="188" y="335.4189">String choice</text><rect fill="none" height="6" style="stroke: #C82930; stroke-width: 1.0;" width="6" x="176" y="343.2539"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="63" x="188" y="349.2549">boolean valid</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="169" x2="265" y1="355.6719" y2="355.6719"/><!--class MCQAnswer--><rect fill="#FEFECE" filter="url(#fa75qnd)" height="48" style="stroke: #A80036; stroke-width: 1.5;" width="100" x="139" y="204"/><ellipse cx="154" cy="220" fill="#ADD1B2" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;"/><path d="M156.7656,215.875 Q156.9219,215.6563 157.1094,215.5469 Q157.2969,215.4375 157.5156,215.4375 Q157.8906,215.4375 158.125,215.6953 Q158.3594,215.9531 158.3594,216.5625 L158.3594,218.0156 Q158.3594,218.625 158.125,218.8906 Q157.8906,219.1563 157.5156,219.1563 Q157.1719,219.1563 156.9688,218.9531 Q156.7656,218.7656 156.6563,218.25 Q156.6094,217.8906 156.4219,217.7031 Q156.0938,217.3281 155.4844,217.1094 Q154.875,216.8906 154.25,216.8906 Q153.4844,216.8906 152.8516,217.2188 Q152.2188,217.5469 151.7266,218.2969 Q151.2344,219.0469 151.2344,220.0781 L151.2344,221.1719 Q151.2344,222.4063 152.125,223.2266 Q153.0156,224.0469 154.6094,224.0469 Q155.5469,224.0469 156.2031,223.7969 Q156.5938,223.6406 157.0156,223.2031 Q157.2813,222.9375 157.4297,222.8594 Q157.5781,222.7813 157.7813,222.7813 Q158.1094,222.7813 158.3672,223.0391 Q158.625,223.2969 158.625,223.6406 Q158.625,223.9844 158.2813,224.3906 Q157.7813,224.9688 156.9844,225.2969 Q155.9063,225.75 154.6094,225.75 Q153.0938,225.75 151.8906,225.125 Q150.9063,224.625 150.2188,223.5547 Q149.5313,222.4844 149.5313,221.2031 L149.5313,220.0469 Q149.5313,218.7188 150.1484,217.5703 Q150.7656,216.4219 151.8594,215.8047 Q152.9531,215.1875 154.1875,215.1875 Q154.9219,215.1875 155.5703,215.3516 Q156.2188,215.5156 156.7656,215.875 Z "/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="68" x="168" y="224.9102">MCQAnswer</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="140" x2="238" y1="236" y2="236"/><line style="stroke: #A80036; stroke-width: 1.5;" x1="140" x2="238" y1="244" y2="244"/><!--class Student--><rect fill="#FEFECE" filter="url(#fa75qnd)" height="75.6719" style="stroke: #A80036; stroke-width: 1.5;" width="83" x="143.5" y="92"/><ellipse cx="162.55" cy="108" fill="#ADD1B2" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;"/><path d="M165.3156,103.875 Q165.4719,103.6563 165.6594,103.5469 Q165.8469,103.4375 166.0656,103.4375 Q166.4406,103.4375 166.675,103.6953 Q166.9094,103.9531 166.9094,104.5625 L166.9094,106.0156 Q166.9094,106.625 166.675,106.8906 Q166.4406,107.1563 166.0656,107.1563 Q165.7219,107.1563 165.5188,106.9531 Q165.3156,106.7656 165.2063,106.25 Q165.1594,105.8906 164.9719,105.7031 Q164.6438,105.3281 164.0344,105.1094 Q163.425,104.8906 162.8,104.8906 Q162.0344,104.8906 161.4016,105.2188 Q160.7688,105.5469 160.2766,106.2969 Q159.7844,107.0469 159.7844,108.0781 L159.7844,109.1719 Q159.7844,110.4063 160.675,111.2266 Q161.5656,112.0469 163.1594,112.0469 Q164.0969,112.0469 164.7531,111.7969 Q165.1438,111.6406 165.5656,111.2031 Q165.8313,110.9375 165.9797,110.8594 Q166.1281,110.7813 166.3313,110.7813 Q166.6594,110.7813 166.9172,111.0391 Q167.175,111.2969 167.175,111.6406 Q167.175,111.9844 166.8313,112.3906 Q166.3313,112.9688 165.5344,113.2969 Q164.4563,113.75 163.1594,113.75 Q161.6438,113.75 160.4406,113.125 Q159.4563,112.625 158.7688,111.5547 Q158.0813,110.4844 158.0813,109.2031 L158.0813,108.0469 Q158.0813,106.7188 158.6984,105.5703 Q159.3156,104.4219 160.4094,103.8047 Q161.5031,103.1875 162.7375,103.1875 Q163.4719,103.1875 164.1203,103.3516 Q164.7688,103.5156 165.3156,103.875 Z "/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="42" x="177.45" y="112.9102">Student</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="144.5" x2="225.5" y1="124" y2="124"/><rect fill="none" height="6" style="stroke: #C82930; stroke-width: 1.0;" width="6" x="151.5" y="133.418"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="57" x="163.5" y="139.4189">String name</text><rect fill="none" height="6" style="stroke: #C82930; stroke-width: 1.0;" width="6" x="151.5" y="147.2539"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="39" x="163.5" y="153.2549">String id</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="144.5" x2="225.5" y1="159.6719" y2="159.6719"/><!--class Answer--><rect fill="#FEFECE" filter="url(#fa75qnd)" height="48" style="stroke: #A80036; stroke-width: 1.5;" width="73" x="49.5" y="8"/><ellipse cx="64.5" cy="24" fill="#ADD1B2" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;"/><path d="M67.2656,19.875 Q67.4219,19.6563 67.6094,19.5469 Q67.7969,19.4375 68.0156,19.4375 Q68.3906,19.4375 68.625,19.6953 Q68.8594,19.9531 68.8594,20.5625 L68.8594,22.0156 Q68.8594,22.625 68.625,22.8906 Q68.3906,23.1563 68.0156,23.1563 Q67.6719,23.1563 67.4688,22.9531 Q67.2656,22.7656 67.1563,22.25 Q67.1094,21.8906 66.9219,21.7031 Q66.5938,21.3281 65.9844,21.1094 Q65.375,20.8906 64.75,20.8906 Q63.9844,20.8906 63.3516,21.2188 Q62.7188,21.5469 62.2266,22.2969 Q61.7344,23.0469 61.7344,24.0781 L61.7344,25.1719 Q61.7344,26.4063 62.625,27.2266 Q63.5156,28.0469 65.1094,28.0469 Q66.0469,28.0469 66.7031,27.7969 Q67.0938,27.6406 67.5156,27.2031 Q67.7813,26.9375 67.9297,26.8594 Q68.0781,26.7813 68.2813,26.7813 Q68.6094,26.7813 68.8672,27.0391 Q69.125,27.2969 69.125,27.6406 Q69.125,27.9844 68.7813,28.3906 Q68.2813,28.9688 67.4844,29.2969 Q66.4063,29.75 65.1094,29.75 Q63.5938,29.75 62.3906,29.125 Q61.4063,28.625 60.7188,27.5547 Q60.0313,26.4844 60.0313,25.2031 L60.0313,24.0469 Q60.0313,22.7188 60.6484,21.5703 Q61.2656,20.4219 62.3594,19.8047 Q63.4531,19.1875 64.6875,19.1875 Q65.4219,19.1875 66.0703,19.3516 Q66.7188,19.5156 67.2656,19.875 Z "/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="41" x="78.5" y="28.9102">Answer</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="50.5" x2="121.5" y1="40" y2="40"/><line style="stroke: #A80036; stroke-width: 1.5;" x1="50.5" x2="121.5" y1="48" y2="48"/><!--class MCQQuestion--><rect fill="#FEFECE" filter="url(#fa75qnd)" height="48" style="stroke: #A80036; stroke-width: 1.5;" width="109" x="110.5" y="400"/><ellipse cx="125.5" cy="416" fill="#ADD1B2" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;"/><path d="M128.2656,411.875 Q128.4219,411.6563 128.6094,411.5469 Q128.7969,411.4375 129.0156,411.4375 Q129.3906,411.4375 129.625,411.6953 Q129.8594,411.9531 129.8594,412.5625 L129.8594,414.0156 Q129.8594,414.625 129.625,414.8906 Q129.3906,415.1563 129.0156,415.1563 Q128.6719,415.1563 128.4688,414.9531 Q128.2656,414.7656 128.1563,414.25 Q128.1094,413.8906 127.9219,413.7031 Q127.5938,413.3281 126.9844,413.1094 Q126.375,412.8906 125.75,412.8906 Q124.9844,412.8906 124.3516,413.2188 Q123.7188,413.5469 123.2266,414.2969 Q122.7344,415.0469 122.7344,416.0781 L122.7344,417.1719 Q122.7344,418.4063 123.625,419.2266 Q124.5156,420.0469 126.1094,420.0469 Q127.0469,420.0469 127.7031,419.7969 Q128.0938,419.6406 128.5156,419.2031 Q128.7813,418.9375 128.9297,418.8594 Q129.0781,418.7813 129.2813,418.7813 Q129.6094,418.7813 129.8672,419.0391 Q130.125,419.2969 130.125,419.6406 Q130.125,419.9844 129.7813,420.3906 Q129.2813,420.9688 128.4844,421.2969 Q127.4063,421.75 126.1094,421.75 Q124.5938,421.75 123.3906,421.125 Q122.4063,420.625 121.7188,419.5547 Q121.0313,418.4844 121.0313,417.2031 L121.0313,416.0469 Q121.0313,414.7188 121.6484,413.5703 Q122.2656,412.4219 123.3594,411.8047 Q124.4531,411.1875 125.6875,411.1875 Q126.4219,411.1875 127.0703,411.3516 Q127.7188,411.5156 128.2656,411.875 Z "/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="77" x="139.5" y="420.9102">MCQQuestion</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="111.5" x2="218.5" y1="432" y2="432"/><line style="stroke: #A80036; stroke-width: 1.5;" x1="111.5" x2="218.5" y1="440" y2="440"/><path d="M157.048,261.6699 C146.9043,272.3589 135.7336,284.1301 125.7515,294.649 " fill="none" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#FFFFFF" points="166.0112,252.2247,158.9796,253.8235,157.7509,260.9291,164.7825,259.3304,166.0112,252.2247" style="stroke: #A80036; stroke-width: 1.0;"/><path d="M119.8234,65.4818 C128.428,73.9994 137.7372,83.2146 146.5535,91.9419 " fill="none" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#FFFFFF" points="110.4719,56.2247,111.922,63.2885,119.0002,64.6668,117.5501,57.603,110.4719,56.2247" style="stroke: #A80036; stroke-width: 1.0;"/><path d="M87.2713,69.3749 C89.2613,127.8824 93.0762,240.0413 94.9326,294.6196 " fill="none" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#FFFFFF" points="86.8183,56.0593,83.0246,62.1918,87.2263,68.0524,91.02,61.9198,86.8183,56.0593" style="stroke: #A80036; stroke-width: 1.0;"/><path d="M199.5175,264.8112 C201.677,272.3694 203.9545,280.3407 206.1262,287.9419 " fill="none" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#FFFFFF" points="195.9214,252.2247,193.7237,259.0927,199.2181,263.763,201.4159,256.8949,195.9214,252.2247" style="stroke: #A80036; stroke-width: 1.0;"/><path d="M186.558,168.17 C186.8612,175.6 187.1788,183.3798 187.4808,190.7787 " fill="none" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#FFFFFF" points="188.0176,203.9324,191.7695,197.7742,187.5281,191.9424,183.7762,198.1006,188.0176,203.9324" style="stroke: #A80036; stroke-width: 1.0;"/><path d="M61.7463,67.4924 C38.2032,105.4603 6,168.3049 6,228 C6,228 6,228 6,326 C6,383.3309 29.2559,446.8105 45.2443,483.6783 " fill="none" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#FFFFFF" points="69.0341,56.0747,62.4342,58.9801,62.5777,66.1898,69.1776,63.2844,69.0341,56.0747" style="stroke: #A80036; stroke-width: 1.0;"/><path d="M190.5125,375.9188 C186.0736,384.2843 181.6538,392.6141 177.7706,399.9324 " fill="none" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#FFFFFF" points="196.7465,364.17,190.4008,367.5952,191.1218,374.7701,197.4676,371.345,196.7465,364.17" style="stroke: #A80036; stroke-width: 1.0;"/><path d="M137.1376,448.1474 C129.1407,455.0781 120.1574,462.8636 111.2235,470.6063 " fill="none" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="none" points="115.6222,476.0571,95.9239,483.8659,106.4532,465.4775,115.6222,476.0571" style="stroke: #A80036; stroke-width: 1.0;"/></g></svg></object><figcaption>UML Class Diagram</figcaption></figure><p/><h3 id="section-2-1">Types of question</h3><p>To handle the most of the possible cases, there are several types of question to consider.</p><ul><li>MCQ Questions</li><li>Open Questions</li><li>Associative Questions</li></ul><h4 id="section-2-1-1">The MCQ questions</h4><p>The MCQ questions are composed of a question text and a set of possible choices, each choice can be right or wrong.<br/>It can also be interesting to add a extra content, like some code extract, some picture or some other kind of media (video, music etc.).</p><h4 id="section-2-1-2">The Open Questions</h4><p>The open questions are composed only by a question, and some hints, additionaly they can be completed by a exta media content.</p><h4 id="section-2-1-3">Associative questions</h4><p>The associative questions are questions where it necessary to assign some propositions to some descriptions, like in the following.</p><h4 id="section-2-1-4">Common questions attributes</h4><p>Each question has a some extra attributes to describe the <b>topic</b> (tag) and the <b>difficulty</b> of the question. Those two fields help to balance the overall exam complexity, and the topics coverage.<br/>Those attributes can be taken in account for automatic exam assembly.</p><h2 id="section-3">Realization</h2><h3 id="section-3-1">Main features</h3><p>The produced application should be a console application. The scope that you should cover by this application is to :</p><ul><li>be able to operate CRUD on Open Questions and MCQ Questions (questions and valid answers are stored in a <b>database</b> or an XML file or a JSON file)</li><li>be able to search questions based on topics</li><li>be able to assemble automatically a quiz (a quiz is a set of questions) that gathers all the questions covering a given list of topics.</li><li>export this quiz under a plain text format</li><li>run the evaluation and provide the automatic mark in the end of this execution</li></ul><h3 id="section-3-2">Bonus</h3><ul><li>Do the same using a desktop GUI (JavaFX is preferred)</li><li>Export a quiz as PDF</li><li>Write an algorithm (or use an existing one) that will allow to get quiz based on a complexity rate. This overall complexity required by the user can be calculated on the <b>difficulty</b> property.</li></ul><h3 id="section-3-3">Example of realization</h3><p>The quiz running part should run the quiz and get the answers from the user.<br/>All the answers should be recorded and at the end of the quiz the global result is displayed to the user.</p><p>You can take an example on the following website :</p><p><a href="https://www.javacodeexamples.com/online-java-test-quiz">Java Code Examples: Quiz</a>  </p><h2 id="section-4">Evaluation</h2><p>This application will be evaluated using the grid below:</p><table class="table table-condensed table-bordered table-hover justify">
-        <thead>
-        <tr>
-            <th>Goal</th>
-            <th>Technical content</th>
-            <th>Evaluation</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr class="info">
-            <th class="center" colspan="3">First level : defining Java Classes and use it in an application</th>
-        </tr>
-        <tr>
-            <td>This is what we should have seen during the first courses: the
-                goal is to initiate you to
-                the Java ecosystem: manipulate basics of the language as much as discovering java tools such
-                as
-                Eclipse
-            </td>
-            <td>To achieve this point you should have:
-                <ul class="circle">
-                    <li>A Java project in Eclipse, containing what will be your core treatments (you could say
-                        your application logic)
-                    </li>
-                    <li><p>In this Java project, you have to define your own package (remember the good practices)
-                        to write your first Java Object: it has to be the classes defined in this document,
-                        please re-read the specification to find how to implement those classes.</p>                       <p> You also should be able to run some tests on the produced code:</p>
-                        <ul>
-                            <li>Instantiate some objects providing some console input </li>
-                            <li>Pass those instances to services that will store them</li>
-                            <li>display them in the console</li>
-                        </ul>
-                    </li>
-                </ul>
-            </td>
-            <td class="numerical">20</td>
-        </tr>
-        <tr class="info">
-            <th class="center" colspan="3">Second level : Find a way to persist a POJO</th>
-        </tr>
-        <tr>
-            <td>This is the most common problem in computer science, for achieving this part fully, you must be
-                able to store a list of Questions in an <strong>XML file</strong> or in a <strong>Data Base</strong>
-            </td>
-            <td>To achieve this point you should have:
-                <ul class="circle">
-                    <li>The previous point totally achieved
-                    </li>
-                    <li>
-                        If you chose the database connection, you should be able to connect to the database through a
-                        JDBC
-                        connection, manipulate the
-                        PreparedStatement and the Connection object, to read and record from / to the database
-                    </li>
-                    <li>
-                        If you chose the XML File persistence, you should use at least the DOM API to parse your XML
-                        file
-                        and read/write from/to the xml file.
-                    </li>
-                </ul>
-            </td>
-            <td class="numerical">40</td>
-        </tr>
-        <tr class="info">
-            <th class="center" colspan="3">Level three: Be professional</th>
-        </tr>
-        <tr>
-            <td><p>This point will stand for all the Quality and Documentation in the project, all your classes should
-                contain appropriate javadoc and comments (a tool evaluating your code quality will be used)</p>               <p>You also must provide a technical description of your architecture, this documentation should be in a
-                    standard format : odt, pdf, doc, docbook, dita, epub. This document is called <strong>Technical
-                        Specification</strong></p>               <p>You should provide a user guide on how to use the «public» part of your program. The public part of
-                    your
-                    program can either be a GUI or a set of APIs depending if you achieved to make a working GUI. This
-                    document is called the <strong>User guide</strong>. This user guide should be readable by someone
-                    who
-                    doesn’t know about your program internal architecture.</p>           </td>
-            <td>To achieve this point you should have:
-                <ul class="circle">
-                    <li>A document indicating what your program is doing and how it is wired inside (what kind of APIs).
-                        Do
-                        not hesitate to provide schemas in this documentation, this is the Technical Specification
-                        document                   </li>
-                    <li>A document indicating how your program should be used, this is the User Guide
-                    </li>
-                    <li>You must export your javadoc in a jar called <code>javadoc.jar</code>, and put it in your
-                        project in
-                        a folder named "javadoc"
-                    </li>
-                    <li>
-                        The preceding requirement implies that you comment well your code, and especially the javadoc.
-                    </li>
-                </ul>
-            </td>
-            <td class="numerical">40</td>
-        </tr>
-        <tr class="info">
-            <td colspan="2">Total</td>
-            <td class="numerical"><strong>100</strong></td>
-        </tr>
-        <tr class="info">
-            <th class="center" colspan="3">Bonus points</th>
-        </tr>
-        <tr>
-            <td><strong>Make everything configurable:</strong>
-                This configuration will avoid hardcoded parameter like connection strings or file path. This is always
-                bad
-                in any application
-            </td>
-            <td>To achieve this point you should have:
-                <ul class="circle">
-                    <li>A global configuration class, which can read a configuration property set from a file on the
-                        filesystem (so the path to this file is hardcoded or given as an application parameter)
-                    </li>
-                    <li>
-                        Your configuration must be based on a standard format like <code>properties</code> or
-                        <code>XML</code>
-                    </li>
-                    <li>
-                        Try to list everything variable in your application and parameter it inside your configuration
-                        file
-                    </li>
-                </ul>
-            </td>
-            <td class="numerical">10</td>
-        </tr>
-        <tr>
-            <td>Do a GUI allowing to use your Quiz / Question / Choice APIs as well as your serializers/deserializers (DAOs).
-            </td>
-            <td>To achieve this point you should have:
-                <ul class="circle">
-                    <li>A GUI that can run as a desktop application
-                    </li>
-                    <li>
-                        This point should be made <strong>after</strong> you did the other elements listed above.
-                        I will not take it in account for the evaluation if you have not already made what is really
-                        required before.
-                    </li>
-                </ul>
-            </td>
-            <td class="numerical">20</td>
-        </tr>
-        </tbody>
-    </table><h2 id="section-5">Delivery</h2><h3 id="section-5-1">code delivery</h3><p>Your code source delivery has to be under a git format (prefer bitbucket for delivery to avoid cheating). Your package should include:<br/>- source code of the application<br/>- User Guide<br/>- Technical Guide<br/>- Compilation &amp; Installation notice (if I’m not able to compile or run your application, the realization mark is set to 0)</p><h3 id="section-5-2">How to submit?</h3><p>You have to send an email with the git url of your repository before the due date. The Subject of your mail should be under the format:</p><p>[${YEAR}_fund-${NAMES}][PROJECT_SUBMISSION] </p><p>the destination email is the following :</p><p><a href="mailto:epita.submission@gmail.com">epita.submission@gmail.com</a></p><h3 id="section-5-3">When to submit ?</h3><p>The due date is set to be 3 weeks after the last lecture. If there are different groups, then it is 3 weeks after the last lecture for the last group.</p><p class="breadcrumb">projects &gt; Fundamental Project</p></div><script type="text/javascript">/*<![CDATA[*/var lastSelected = null;
+/*]]>*/</style></head><body><div class="head " id="headDiv"><div class="title " id="titleDiv">Advanced Java project : Quiz Manager</div></div><div class="content  singleTitle" id="content"><div class="toc " id="toc"><div class="lv2" id="menuHolder"><a class="scroll " href="#section-1" id="anchor-section-1">1. Introduction</a></div><div class="lv2" id="menuHolder"><a class="scroll " href="#section-2" id="anchor-section-2">2. Specifications</a></div><div class="lv3" id="menuHolder"><a class="scroll " href="#section-2-1" id="anchor-section-2-1">2.1. Types of question</a></div><div class="lv4" id="menuHolder"><a class="scroll " href="#section-2-1-1" id="anchor-section-2-1-1">2.1.1. The MCQ questions</a></div><div class="lv4" id="menuHolder"><a class="scroll " href="#section-2-1-2" id="anchor-section-2-1-2">2.1.2. The Open Questions</a></div><div class="lv4" id="menuHolder"><a class="scroll " href="#section-2-1-3" id="anchor-section-2-1-3">2.1.3. Associative questions</a></div><div class="lv4" id="menuHolder"><a class="scroll " href="#section-2-1-4" id="anchor-section-2-1-4">2.1.4. Common questions attributes</a></div><div class="lv2" id="menuHolder"><a class="scroll " href="#section-3" id="anchor-section-3">3. Realization</a></div><div class="lv3" id="menuHolder"><a class="scroll " href="#section-3-1" id="anchor-section-3-1">3.1. Quiz editing</a></div><div class="lv3" id="menuHolder"><a class="scroll " href="#section-3-2" id="anchor-section-3-2">3.2. Quiz execution</a></div></div><h2 id="section-1">Introduction</h2><p>This project is made to provide an evaluation of the advanced java course The goal of this project is to develop a program (API oriented, Web-based) that helps in dealing with quiz assessments.</p><p>The usual problem while preparing an evaluation, is to :</p><ul><li>Constitute an appropriate evaluation regarding of the required level</li><li>Reuse former questions</li><li>Organize sample evaluations</li><li>Correct automatically the MCQ questions.</li></ul><h2 id="section-2">Specifications</h2><p class="imgTitleTop">UML Class Diagram</p><object><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="470px" preserveAspectRatio="none" style="width:257px;height:470px;" version="1.1" viewBox="0 0 257 470" width="257px" zoomAndPan="magnify"><defs><filter height="300%" id="fdgjev8" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><!--class Question--><rect fill="#FEFECE" filter="url(#fdgjev8)" height="61.8359" style="stroke: #A80036; stroke-width: 1.5;" width="98" x="44.1183" y="400"/><ellipse cx="66.3183" cy="416" fill="#ADD1B2" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;"/><path d="M69.0839,411.875 Q69.2402,411.6563 69.4277,411.5469 Q69.6152,411.4375 69.8339,411.4375 Q70.2089,411.4375 70.4433,411.6953 Q70.6777,411.9531 70.6777,412.5625 L70.6777,414.0156 Q70.6777,414.625 70.4433,414.8906 Q70.2089,415.1563 69.8339,415.1563 Q69.4902,415.1563 69.2871,414.9531 Q69.0839,414.7656 68.9746,414.25 Q68.9277,413.8906 68.7402,413.7031 Q68.4121,413.3281 67.8027,413.1094 Q67.1933,412.8906 66.5683,412.8906 Q65.8027,412.8906 65.1699,413.2188 Q64.5371,413.5469 64.0449,414.2969 Q63.5527,415.0469 63.5527,416.0781 L63.5527,417.1719 Q63.5527,418.4063 64.4433,419.2266 Q65.3339,420.0469 66.9277,420.0469 Q67.8652,420.0469 68.5214,419.7969 Q68.9121,419.6406 69.3339,419.2031 Q69.5996,418.9375 69.748,418.8594 Q69.8964,418.7813 70.0996,418.7813 Q70.4277,418.7813 70.6855,419.0391 Q70.9433,419.2969 70.9433,419.6406 Q70.9433,419.9844 70.5996,420.3906 Q70.0996,420.9688 69.3027,421.2969 Q68.2246,421.75 66.9277,421.75 Q65.4121,421.75 64.2089,421.125 Q63.2245,420.625 62.537,419.5547 Q61.8495,418.4844 61.8495,417.2031 L61.8495,416.0469 Q61.8495,414.7188 62.4667,413.5703 Q63.0839,412.4219 64.1777,411.8047 Q65.2714,411.1875 66.5058,411.1875 Q67.2402,411.1875 67.8886,411.3516 Q68.5371,411.5156 69.0839,411.875 Z "/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="50" x="81.9183" y="420.9102">Question</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="45.1183" x2="141.1183" y1="432" y2="432"/><rect fill="none" height="6" style="stroke: #C82930; stroke-width: 1.0;" width="6" x="52.1183" y="441.418"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="72" x="64.1183" y="447.4189">String question</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="45.1183" x2="141.1183" y1="453.8359" y2="453.8359"/><!--class Exam--><rect fill="#FEFECE" filter="url(#fdgjev8)" height="61.8359" style="stroke: #A80036; stroke-width: 1.5;" width="73" x="41.6183" y="295"/><ellipse cx="61.1183" cy="311" fill="#ADD1B2" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;"/><path d="M63.8839,306.875 Q64.0402,306.6563 64.2277,306.5469 Q64.4152,306.4375 64.6339,306.4375 Q65.0089,306.4375 65.2433,306.6953 Q65.4777,306.9531 65.4777,307.5625 L65.4777,309.0156 Q65.4777,309.625 65.2433,309.8906 Q65.0089,310.1563 64.6339,310.1563 Q64.2902,310.1563 64.0871,309.9531 Q63.8839,309.7656 63.7746,309.25 Q63.7277,308.8906 63.5402,308.7031 Q63.2121,308.3281 62.6027,308.1094 Q61.9933,307.8906 61.3683,307.8906 Q60.6027,307.8906 59.9699,308.2188 Q59.3371,308.5469 58.8449,309.2969 Q58.3527,310.0469 58.3527,311.0781 L58.3527,312.1719 Q58.3527,313.4063 59.2433,314.2266 Q60.1339,315.0469 61.7277,315.0469 Q62.6652,315.0469 63.3214,314.7969 Q63.7121,314.6406 64.1339,314.2031 Q64.3996,313.9375 64.548,313.8594 Q64.6964,313.7813 64.8996,313.7813 Q65.2277,313.7813 65.4855,314.0391 Q65.7433,314.2969 65.7433,314.6406 Q65.7433,314.9844 65.3996,315.3906 Q64.8996,315.9688 64.1027,316.2969 Q63.0246,316.75 61.7277,316.75 Q60.2121,316.75 59.0089,316.125 Q58.0246,315.625 57.3371,314.5547 Q56.6496,313.4844 56.6496,312.2031 L56.6496,311.0469 Q56.6496,309.7188 57.2667,308.5703 Q57.8839,307.4219 58.9777,306.8047 Q60.0714,306.1875 61.3058,306.1875 Q62.0402,306.1875 62.6886,306.3516 Q63.3371,306.5156 63.8839,306.875 Z "/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="31" x="76.1183" y="315.9102">Exam</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="42.6183" x2="113.6183" y1="327" y2="327"/><rect fill="none" height="6" style="stroke: #C82930; stroke-width: 1.0;" width="6" x="49.6183" y="336.418"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="47" x="61.6183" y="342.4189">String title</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="42.6183" x2="113.6183" y1="348.8359" y2="348.8359"/><!--class MCQChoice--><rect fill="#FEFECE" filter="url(#fdgjev8)" height="75.6719" style="stroke: #A80036; stroke-width: 1.5;" width="98" x="150.1183" y="288"/><ellipse cx="165.1183" cy="304" fill="#ADD1B2" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;"/><path d="M167.8839,299.875 Q168.0402,299.6563 168.2277,299.5469 Q168.4152,299.4375 168.6339,299.4375 Q169.0089,299.4375 169.2433,299.6953 Q169.4777,299.9531 169.4777,300.5625 L169.4777,302.0156 Q169.4777,302.625 169.2433,302.8906 Q169.0089,303.1563 168.6339,303.1563 Q168.2902,303.1563 168.0871,302.9531 Q167.8839,302.7656 167.7746,302.25 Q167.7277,301.8906 167.5402,301.7031 Q167.2121,301.3281 166.6027,301.1094 Q165.9933,300.8906 165.3683,300.8906 Q164.6027,300.8906 163.9699,301.2188 Q163.3371,301.5469 162.8449,302.2969 Q162.3527,303.0469 162.3527,304.0781 L162.3527,305.1719 Q162.3527,306.4063 163.2433,307.2266 Q164.1339,308.0469 165.7277,308.0469 Q166.6652,308.0469 167.3214,307.7969 Q167.7121,307.6406 168.1339,307.2031 Q168.3996,306.9375 168.548,306.8594 Q168.6964,306.7813 168.8996,306.7813 Q169.2277,306.7813 169.4855,307.0391 Q169.7433,307.2969 169.7433,307.6406 Q169.7433,307.9844 169.3996,308.3906 Q168.8996,308.9688 168.1027,309.2969 Q167.0246,309.75 165.7277,309.75 Q164.2121,309.75 163.0089,309.125 Q162.0246,308.625 161.3371,307.5547 Q160.6496,306.4844 160.6496,305.2031 L160.6496,304.0469 Q160.6496,302.7188 161.2667,301.5703 Q161.8839,300.4219 162.9777,299.8047 Q164.0714,299.1875 165.3058,299.1875 Q166.0402,299.1875 166.6886,299.3516 Q167.3371,299.5156 167.8839,299.875 Z "/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="66" x="179.1183" y="308.9102">MCQChoice</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="151.1183" x2="247.1183" y1="320" y2="320"/><rect fill="none" height="6" style="stroke: #C82930; stroke-width: 1.0;" width="6" x="158.1183" y="329.418"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="63" x="170.1183" y="335.4189">String choice</text><rect fill="none" height="6" style="stroke: #C82930; stroke-width: 1.0;" width="6" x="158.1183" y="343.2539"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="63" x="170.1183" y="349.2549">boolean valid</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="151.1183" x2="247.1183" y1="355.6719" y2="355.6719"/><!--class MCQAnswer--><rect fill="#FEFECE" filter="url(#fdgjev8)" height="48" style="stroke: #A80036; stroke-width: 1.5;" width="100" x="121.1183" y="204"/><ellipse cx="136.1183" cy="220" fill="#ADD1B2" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;"/><path d="M138.8839,215.875 Q139.0402,215.6563 139.2277,215.5469 Q139.4152,215.4375 139.6339,215.4375 Q140.0089,215.4375 140.2433,215.6953 Q140.4777,215.9531 140.4777,216.5625 L140.4777,218.0156 Q140.4777,218.625 140.2433,218.8906 Q140.0089,219.1563 139.6339,219.1563 Q139.2902,219.1563 139.0871,218.9531 Q138.8839,218.7656 138.7746,218.25 Q138.7277,217.8906 138.5402,217.7031 Q138.2121,217.3281 137.6027,217.1094 Q136.9933,216.8906 136.3683,216.8906 Q135.6027,216.8906 134.9699,217.2188 Q134.3371,217.5469 133.8449,218.2969 Q133.3527,219.0469 133.3527,220.0781 L133.3527,221.1719 Q133.3527,222.4063 134.2433,223.2266 Q135.1339,224.0469 136.7277,224.0469 Q137.6652,224.0469 138.3214,223.7969 Q138.7121,223.6406 139.1339,223.2031 Q139.3996,222.9375 139.548,222.8594 Q139.6964,222.7813 139.8996,222.7813 Q140.2277,222.7813 140.4855,223.0391 Q140.7433,223.2969 140.7433,223.6406 Q140.7433,223.9844 140.3996,224.3906 Q139.8996,224.9688 139.1027,225.2969 Q138.0246,225.75 136.7277,225.75 Q135.2121,225.75 134.0089,225.125 Q133.0246,224.625 132.3371,223.5547 Q131.6496,222.4844 131.6496,221.2031 L131.6496,220.0469 Q131.6496,218.7188 132.2667,217.5703 Q132.8839,216.4219 133.9777,215.8047 Q135.0714,215.1875 136.3058,215.1875 Q137.0402,215.1875 137.6886,215.3516 Q138.3371,215.5156 138.8839,215.875 Z "/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="68" x="150.1183" y="224.9102">MCQAnswer</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="122.1183" x2="220.1183" y1="236" y2="236"/><line style="stroke: #A80036; stroke-width: 1.5;" x1="122.1183" x2="220.1183" y1="244" y2="244"/><!--class Student--><rect fill="#FEFECE" filter="url(#fdgjev8)" height="75.6719" style="stroke: #A80036; stroke-width: 1.5;" width="83" x="125.6183" y="92"/><ellipse cx="144.6683" cy="108" fill="#ADD1B2" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;"/><path d="M147.4339,103.875 Q147.5902,103.6563 147.7777,103.5469 Q147.9652,103.4375 148.1839,103.4375 Q148.5589,103.4375 148.7933,103.6953 Q149.0277,103.9531 149.0277,104.5625 L149.0277,106.0156 Q149.0277,106.625 148.7933,106.8906 Q148.5589,107.1563 148.1839,107.1563 Q147.8402,107.1563 147.6371,106.9531 Q147.4339,106.7656 147.3246,106.25 Q147.2777,105.8906 147.0902,105.7031 Q146.7621,105.3281 146.1527,105.1094 Q145.5433,104.8906 144.9183,104.8906 Q144.1527,104.8906 143.5199,105.2188 Q142.8871,105.5469 142.3949,106.2969 Q141.9027,107.0469 141.9027,108.0781 L141.9027,109.1719 Q141.9027,110.4063 142.7933,111.2266 Q143.6839,112.0469 145.2777,112.0469 Q146.2152,112.0469 146.8714,111.7969 Q147.2621,111.6406 147.6839,111.2031 Q147.9496,110.9375 148.098,110.8594 Q148.2464,110.7813 148.4496,110.7813 Q148.7777,110.7813 149.0355,111.0391 Q149.2933,111.2969 149.2933,111.6406 Q149.2933,111.9844 148.9496,112.3906 Q148.4496,112.9688 147.6527,113.2969 Q146.5746,113.75 145.2777,113.75 Q143.7621,113.75 142.5589,113.125 Q141.5746,112.625 140.8871,111.5547 Q140.1996,110.4844 140.1996,109.2031 L140.1996,108.0469 Q140.1996,106.7188 140.8167,105.5703 Q141.4339,104.4219 142.5277,103.8047 Q143.6214,103.1875 144.8558,103.1875 Q145.5902,103.1875 146.2386,103.3516 Q146.8871,103.5156 147.4339,103.875 Z "/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="42" x="159.5683" y="112.9102">Student</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="126.6183" x2="207.6183" y1="124" y2="124"/><rect fill="none" height="6" style="stroke: #C82930; stroke-width: 1.0;" width="6" x="133.6183" y="133.418"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="57" x="145.6183" y="139.4189">String name</text><rect fill="none" height="6" style="stroke: #C82930; stroke-width: 1.0;" width="6" x="133.6183" y="147.2539"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="39" x="145.6183" y="153.2549">String id</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="126.6183" x2="207.6183" y1="159.6719" y2="159.6719"/><!--class Answer--><rect fill="#FEFECE" filter="url(#fdgjev8)" height="48" style="stroke: #A80036; stroke-width: 1.5;" width="73" x="31.6183" y="8"/><ellipse cx="46.6183" cy="24" fill="#ADD1B2" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;"/><path d="M49.3839,19.875 Q49.5402,19.6563 49.7277,19.5469 Q49.9152,19.4375 50.1339,19.4375 Q50.5089,19.4375 50.7433,19.6953 Q50.9777,19.9531 50.9777,20.5625 L50.9777,22.0156 Q50.9777,22.625 50.7433,22.8906 Q50.5089,23.1563 50.1339,23.1563 Q49.7902,23.1563 49.5871,22.9531 Q49.3839,22.7656 49.2746,22.25 Q49.2277,21.8906 49.0402,21.7031 Q48.7121,21.3281 48.1027,21.1094 Q47.4933,20.8906 46.8683,20.8906 Q46.1027,20.8906 45.4699,21.2188 Q44.8371,21.5469 44.3449,22.2969 Q43.8527,23.0469 43.8527,24.0781 L43.8527,25.1719 Q43.8527,26.4063 44.7433,27.2266 Q45.6339,28.0469 47.2277,28.0469 Q48.1652,28.0469 48.8214,27.7969 Q49.2121,27.6406 49.6339,27.2031 Q49.8996,26.9375 50.048,26.8594 Q50.1964,26.7813 50.3996,26.7813 Q50.7277,26.7813 50.9855,27.0391 Q51.2433,27.2969 51.2433,27.6406 Q51.2433,27.9844 50.8996,28.3906 Q50.3996,28.9688 49.6027,29.2969 Q48.5246,29.75 47.2277,29.75 Q45.7121,29.75 44.5089,29.125 Q43.5246,28.625 42.8371,27.5547 Q42.1496,26.4844 42.1496,25.2031 L42.1496,24.0469 Q42.1496,22.7188 42.7667,21.5703 Q43.3839,20.4219 44.4777,19.8047 Q45.5714,19.1875 46.8058,19.1875 Q47.5402,19.1875 48.1886,19.3516 Q48.8371,19.5156 49.3839,19.875 Z "/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="41" x="60.6183" y="28.9102">Answer</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="32.6183" x2="103.6183" y1="40" y2="40"/><line style="stroke: #A80036; stroke-width: 1.5;" x1="32.6183" x2="103.6183" y1="48" y2="48"/><path d="M139.1662,261.6699 C129.0226,272.3589 117.8519,284.1301 107.8698,294.649 " fill="none" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#A80036" points="148.1295,252.2247,141.0979,253.8234,139.8691,260.9291,146.9008,259.3303,148.1295,252.2247" style="stroke: #A80036; stroke-width: 1.0;"/><path d="M101.9417,65.4818 C110.5463,73.9994 119.8555,83.2146 128.6718,91.9419 " fill="none" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#A80036" points="92.5902,56.2247,94.0403,63.2885,101.1185,64.6668,99.6684,57.603,92.5902,56.2247" style="stroke: #A80036; stroke-width: 1.0;"/><path d="M69.3895,69.3749 C71.3796,127.8824 75.1945,240.0413 77.0509,294.6196 " fill="none" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#A80036" points="68.9366,56.0593,65.1429,62.1918,69.3446,68.0524,73.1383,61.9198,68.9366,56.0593" style="stroke: #A80036; stroke-width: 1.0;"/><path d="M181.6358,264.8112 C183.7953,272.3694 186.0728,280.3407 188.2445,287.9419 " fill="none" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#A80036" points="178.0396,252.2247,175.8419,259.0927,181.3363,263.763,183.534,256.8949,178.0396,252.2247" style="stroke: #A80036; stroke-width: 1.0;"/><path d="M168.6762,168.17 C168.9795,175.6 169.297,183.3798 169.599,190.7787 " fill="none" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#A80036" points="170.1359,203.9324,173.8878,197.7742,169.6464,191.9424,165.8945,198.1006,170.1359,203.9324" style="stroke: #A80036; stroke-width: 1.0;"/><path d="M51.4927,68.4 C25.2868,131.298 -18.4807,263.2585 24.1183,364 C29.841,377.5335 39.7826,389.6797 50.3665,399.7932 " fill="none" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#A80036" points="56.7808,56.0625,50.7406,60.0015,52.0533,67.0921,58.0936,63.1531,56.7808,56.0625" style="stroke: #A80036; stroke-width: 1.0;"/><path d="M151.2307,373.4358 C142.1751,382.406 132.9186,391.5752 124.5318,399.8828 " fill="none" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#A80036" points="160.55,364.2044,153.4723,365.5851,152.0246,372.6494,159.1023,371.2687,160.55,364.2044" style="stroke: #A80036; stroke-width: 1.0;"/></g></svg></object><p/><h3 id="section-2-1">Types of question</h3><p>To handle the most of the possible cases, there are several types of question to consider.</p><h4 id="section-2-1-1">The MCQ questions</h4><p>The MCQ questions are composed of a question text and a set of possible choices, each choice can be right or wrong.<br/>It can also be interesting to add a extra content, like some code extract, some picture or some other kind of media (video, music etc.).</p><h4 id="section-2-1-2">The Open Questions</h4><p>The open questions are composed only by a question, and some hints, additionaly they can be completed by a exta media content.</p><h4 id="section-2-1-3">Associative questions</h4><p>The associative questions are questions where it necessary to assign some propositions to some descriptions, like in the following.</p><h4 id="section-2-1-4">Common questions attributes</h4><p>Each question has a some extra attribute to describe the topic and the difficulty of the question. Those two fields help to balance the overall exam complexity, and the topics coverage.<br/>Those attributes can be taken in account for automatic exam assembly.</p><h2 id="section-3">Realization</h2><p>The produced application should be a web application. The usage of a Service Oriented Architecture (API-based) is recommended.<br/>Two main features are expected: </p><h3 id="section-3-1">Quiz editing</h3><p>The quiz editing part aims at providing user interface to create questions, and organize them to form a quiz. </p><p><strong>For this project, only the Multiple Choices Questions are to be implemented.</strong></p><h3 id="section-3-2">Quiz execution</h3><p>The quiz running part should run the quiz and get the answers from the user.<br/>All the answers should be recorded and at the end of the quiz the global result is displayed to the user.</p><p>You can take an example on the following website :</p><p><a href="https://www.javacodeexamples.com/online-java-test-quiz">Java Code Examples: Quiz</a>  </p><p class="breadcrumb"><a href="../project">project</a> &gt; advanced-project.textile</p></div><script type="text/javascript">/*<![CDATA[*/var lastSelected = null;
 function bindTOCToggle(){
     var toc = document.getElementById('toc');
     var list = toc.getElementsByTagName("div");
